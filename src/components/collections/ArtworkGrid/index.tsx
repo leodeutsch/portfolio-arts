@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import type { Artwork } from "../../../types/";
+import { getImageKitUrl } from "../../../utils/imgkit";
 import { ArtworkModal } from "../ArtworkModal";
 import * as S from "./styles";
 
@@ -27,7 +28,10 @@ export const ArtworkGrid: React.FC<ArtworkGridProps> = ({ artworks }) => {
             onClick={() => handleArtworkClick(artwork)}
           >
             <S.ArtworkImage>
-              <img src={artwork.thumbnailUrl} alt={artwork.title} />
+              <img
+                src={getImageKitUrl(artwork.thumbnailUrl)}
+                alt={artwork.title}
+              />
               <S.ArtworkOverlay>
                 <S.ArtworkTitle>{artwork.title}</S.ArtworkTitle>
               </S.ArtworkOverlay>

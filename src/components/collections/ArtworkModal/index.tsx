@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import type { Artwork } from "../../../types/";
+import { getImageKitUrl } from "../../../utils/imgkit";
 import * as S from "./styles";
 
 interface ArtworkModalProps {
@@ -39,7 +40,7 @@ export const ArtworkModal: React.FC<ArtworkModalProps> = ({
         <S.CloseButton onClick={onClose}>×</S.CloseButton>
 
         <S.ImageContainer>
-          <img src={artwork.imageUrl} alt={artwork.title} />
+          <img src={getImageKitUrl(artwork.imageUrl)} alt={artwork.title} />
         </S.ImageContainer>
 
         <S.ArtworkInfo>

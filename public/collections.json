@@ -1,0 +1,151 @@
+[
+  {
+    "id": "1",
+    "name": "Forma e Relevo",
+    "description": "Flores e formas",
+    "coverImage": "flor-do-algodao-1.jpg?tr=w-800,h-800",
+    "artworks": [
+      {
+        "id": "1-1",
+        "title": "Flor de Algodão I",
+        "collection": "Forma e Relevo",
+        "imageUrl": "flor-do-algodao-1.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "flor-do-algodao-1.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "1-2",
+        "title": "Flor de Algodão II",
+        "collection": "Forma e Relevo",
+        "imageUrl": "flor-do-algodao-2.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "flor-do-algodao-2.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "1-3",
+        "title": "Decore sua Alma",
+        "collection": "Forma e Relevo",
+        "imageUrl": "decore-sua-alma.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "decore-sua-alma.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "1-4",
+        "title": "Formas Inquietas I",
+        "collection": "Forma e Relevo",
+        "imageUrl": "formas-inquietas-1.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "formas-inquietas-1.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "1-5",
+        "title": "Formas Inquietas II",
+        "collection": "Forma e Relevo",
+        "imageUrl": "formas-inquietas-2.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "formas-inquietas-2.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "1-6",
+        "title": "Fragmentos Sinuosos",
+        "collection": "Forma e Relevo",
+        "imageUrl": "fragmentos-sinuosos.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "fragmentos-sinuosos.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "1-7",
+        "title": "Jardim Barroco",
+        "collection": "Forma e Relevo",
+        "imageUrl": "jardim-barroco.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "jardim-barroco.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "1-8",
+        "title": "Jardim em Camadas",
+        "collection": "Forma e Relevo",
+        "imageUrl": "jardim-em-camadas.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "jardim-em-camadas.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "1-9",
+        "title": "Abstrações",
+        "collection": "Forma e Relevo",
+        "imageUrl": "abstracoes.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "abstracoes.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "1-10",
+        "title": "Enigmático",
+        "collection": "Forma e Relevo",
+        "imageUrl": "enigmatico.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "enigmatico.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "1-11",
+        "title": "Jardim Pulsante",
+        "collection": "Forma e Relevo",
+        "imageUrl": "jardim-pulsante.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "jardim-pulsante.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "1-12",
+        "title": "Metáfora",
+        "collection": "Forma e Relevo",
+        "imageUrl": "metafora.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "metafora.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "1-13",
+        "title": "Plante Seu Jardim",
+        "collection": "Forma e Relevo",
+        "imageUrl": "plante-seu-jardim.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "plante-seu-jardim.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "1-14",
+        "title": "Primavera",
+        "collection": "Forma e Relevo",
+        "imageUrl": "primavera.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "primavera.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "1-15",
+        "title": "Silêncio Fluido",
+        "collection": "Forma e Relevo",
+        "imageUrl": "silencio-fluido.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "silencio-fluido.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "1-16",
+        "title": "Silêncio",
+        "collection": "Forma e Relevo",
+        "imageUrl": "silencio.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "silencio.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "1-17",
+        "title": "Silhueta Floral",
+        "collection": "Forma e Relevo",
+        "imageUrl": "silhueta-floral.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "silhueta-floral.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "1-18",
+        "title": "Sussurros em Pétalas",
+        "collection": "Forma e Relevo",
+        "imageUrl": "sussurros-em-petalas.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "sussurros-em-petalas.jpg?tr=w-800,h-800"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Nova Coleção",
+    "description": "",
+    "coverImage": "",
+    "artworks": [
+      {
+        "id": "2-1",
+        "title": "",
+        "collection": "Nova Coleção",
+        "imageUrl": "",
+        "thumbnailUrl": ""
+      }
+    ]
+  }
+]

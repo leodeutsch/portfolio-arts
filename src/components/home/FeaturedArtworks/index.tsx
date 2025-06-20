@@ -1,6 +1,7 @@
 import React from "react";
 import { useLanguage } from "../../../contexts/LanguageContext";
 import type { Artwork } from "../../../types";
+import { getImageKitUrl } from "../../../utils/imgkit";
 import { Copyright } from "../../copyright";
 import * as S from "./styles";
 
@@ -22,7 +23,10 @@ export const FeaturedArtworks: React.FC<FeaturedArtworksProps> = ({
           {artworks.map((artwork) => (
             <S.ArtworkCard key={artwork.id} to={`/artwork/${artwork.id}`}>
               <S.ArtworkImage>
-                <img src={artwork.thumbnailUrl} alt={artwork.title} />
+                <img
+                  src={getImageKitUrl(artwork.thumbnailUrl)}
+                  alt={artwork.title}
+                />
                 <S.ArtworkOverlay>
                   <S.ViewButton>{t("common.view")}</S.ViewButton>
                 </S.ArtworkOverlay>

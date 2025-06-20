@@ -21,6 +21,7 @@ export interface Translation {
     allCollections: string;
     artworksCount: string;
     description: string;
+    viewCollection: string;
   };
   about: {
     title: string;

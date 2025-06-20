@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "../../../contexts/LanguageContext";
 import type { Collection } from "../../../types";
+import { getImageKitUrl } from "../../../utils/imgkit";
 import * as S from "./styles";
 
 interface CollectionCardProps {
@@ -10,6 +12,7 @@ interface CollectionCardProps {
 export const CollectionCard: React.FC<CollectionCardProps> = ({
   collection,
 }) => {
+  const { t } = useLanguage();
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -19,9 +22,12 @@ export const CollectionCard: React.FC<CollectionCardProps> = ({
   return (
     <S.Card onClick={handleClick}>
       <S.ImageContainer>
-        <S.Image src={collection.coverImage} alt={collection.name} />
+        <S.Image
+          src={getImageKitUrl(collection.coverImage)}
+          alt={collection.name}
+        />
         <S.Overlay>
-          <S.ViewButton>View Collection</S.ViewButton>
+          <S.ViewButton>{t("collections.viewCollection")}</S.ViewButton>
         </S.Overlay>
       </S.ImageContainer>
       <S.Title>{collection.name}</S.Title>

@@ -1,40 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { FeaturedArtworks } from "../../components/home/FeaturedArtworks";
 import { HeroSlider } from "../../components/home/HeroSlider";
-import type { Artwork } from "../../types/";
+import type { Artwork, Collection } from "../../types/";
 import * as S from "./styles";
-
-// Mock data - substituir com API real
-const mockArtworks: Artwork[] = [
-  {
-    id: "1",
-    title: "Paisagem Serena",
-    collection: "Natureza Abstrata",
-    imageUrl: "/images/artwork1.jpg",
-    thumbnailUrl: "/images/artwork1-thumb.jpg",
-    featured: true,
-  },
-  {
-    id: "2",
-    title: "Reflexões Urbanas",
-    collection: "Cidade Moderna",
-    imageUrl: "/images/artwork2.jpg",
-    thumbnailUrl: "/images/artwork2-thumb.jpg",
-    featured: true,
-  },
-  // Adicionar mais obras aqui
-];
 
 export const Home: React.FC = () => {
   const [artworks, setArtworks] = useState<Artwork[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simular carregamento de dados
-    setTimeout(() => {
-      setArtworks(mockArtworks);
-      setLoading(false);
-    }, 1000);
+    fetch("/collections.json")
+      .then((res) => res.json())
+      .then((collections: Collection[]) => {
+        // Flatten all artworks from all collections
+        const allArtworks = collections.flatMap((col) =>
+          col.artworks.map((art) => ({
+            ...art,
+            collection: col.name,
+          }))
+        );
+        setArtworks(allArtworks);
+      })
+      .finally(() => setLoading(false));
   }, []);
 
   if (loading) {
@@ -42,13 +29,13 @@ export const Home: React.FC = () => {
   }
 
   const sliderArtworks = artworks.slice(0, 3);
-  const featuredArtworks = artworks.filter((art) => art.featured).slice(0, 5);
+  const featuredArtworks = artworks.slice(0, 4);
 
   return (
     <S.HomeContainer>
       <HeroSlider
         artworks={sliderArtworks}
-        collectionName="Natureza Abstrata"
+        collectionName={sliderArtworks[0]?.collection || ""}
       />
       <FeaturedArtworks artworks={featuredArtworks} />
     </S.HomeContainer>

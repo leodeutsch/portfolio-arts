@@ -2,53 +2,9 @@ import React, { useEffect, useState } from "react";
 import { CollectionCard } from "../../components/collections/CollectionCard";
 import { Copyright } from "../../components/copyright";
 import { useLanguage } from "../../contexts/LanguageContext";
+import { fetchCollections } from "../../services/collectionService";
 import type { Collection } from "../../types/";
 import * as S from "./styles";
-
-const mockCollections: Collection[] = [
-  {
-    id: "1",
-    name: "Nature's Canvas",
-    description: "Paisagens naturais capturadas em momentos únicos",
-    coverImage: "/images/nature-collection.jpg",
-    artworks: [],
-  },
-  {
-    id: "2",
-    name: "Urban Echoes",
-    description: "A vida urbana através de uma perspectiva artística",
-    coverImage: "/images/urban-collection.jpg",
-    artworks: [],
-  },
-  {
-    id: "3",
-    name: "Abstract Visions",
-    description: "Formas e cores que transcendem a realidade",
-    coverImage: "/images/abstract-collection.jpg",
-    artworks: [],
-  },
-  {
-    id: "4",
-    name: "Portraits of Reflection",
-    description: "Retratos que capturam a essência humana",
-    coverImage: "/images/portraits-collection.jpg",
-    artworks: [],
-  },
-  {
-    id: "5",
-    name: "Sculptural Forms",
-    description: "Explorando dimensões através da forma",
-    coverImage: "/images/sculptural-collection.jpg",
-    artworks: [],
-  },
-  {
-    id: "6",
-    name: "Digital Dreams",
-    description: "Arte digital contemporânea",
-    coverImage: "/images/digital-collection.jpg",
-    artworks: [],
-  },
-];
 
 export const Collections: React.FC = () => {
   const [collections, setCollections] = useState<Collection[]>([]);
@@ -56,10 +12,9 @@ export const Collections: React.FC = () => {
   const { t } = useLanguage();
 
   useEffect(() => {
-    setTimeout(() => {
-      setCollections(mockCollections);
-      setLoading(false);
-    }, 1000);
+    fetchCollections()
+      .then(setCollections)
+      .finally(() => setLoading(false));
   }, []);
 
   if (loading) {
@@ -70,18 +25,13 @@ export const Collections: React.FC = () => {
     <S.CollectionsContainer>
       <S.Header>
         <S.Title>{t("collections.title")}</S.Title>
-        <S.Description>
-          {t("collections.description") ||
-            "Explore the diverse range of artistic collections, each showcasing a unique theme and style. Dive into the galleries to discover individual artworks within each collection."}
-        </S.Description>
+        <S.Description>{t("collections.description")}</S.Description>
       </S.Header>
-
       <S.CollectionsGrid>
         {collections.map((collection) => (
           <CollectionCard key={collection.id} collection={collection} />
         ))}
       </S.CollectionsGrid>
-
       <Copyright />
     </S.CollectionsContainer>
   );

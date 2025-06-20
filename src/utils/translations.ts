@@ -25,6 +25,7 @@ export const translations: Record<"pt" | "en", Translation> = {
       artworksCount: "obras",
       description:
         "Explore a diversa gama de coleções artísticas, cada uma apresentando um tema e estilo únicos. Mergulhe nas galerias para descobrir obras individuais dentro de cada coleção.",
+      viewCollection: "Ver Coleção",
     },
     about: {
       title: "Sobre a Artista",
@@ -82,6 +83,7 @@ export const translations: Record<"pt" | "en", Translation> = {
       artworksCount: "artworks",
       description:
         "Explore the diverse range of artistic collections, each showcasing a unique theme and style. Dive into the galleries to discover individual artworks within each collection.",
+      viewCollection: "View Collection",
     },
     about: {
       title: "About the Artist",

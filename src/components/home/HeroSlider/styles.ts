@@ -96,3 +96,34 @@ export const Indicator = styled.button<{ active: boolean }>`
     active ? "#fff" : "rgba(255, 255, 255, 0.5)"};
   transition: all ${({ theme }) => theme.transitions.default};
 `;
+
+export const ArrowButton = styled.button<{
+  left?: boolean;
+  right?: boolean;
+  hovered?: boolean;
+}>`
+  opacity: ${({ hovered }) => (hovered ? 1 : 0)};
+  pointer-events: ${({ hovered }) => (hovered ? "auto" : "none")};
+  position: absolute;
+  top: 50%;
+  ${({ left }) => left && "left: 2rem;"}
+  ${({ right }) => right && "right: 2rem;"}
+  color: black;
+  font-size: 2rem;
+  font-weight: 300;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  padding-bottom: 6px;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 4;
+  transition: opacity 0.2s ${({ theme }) => theme.transitions.default};
+
+  &:focus {
+    outline: none;
+  }
+`;
