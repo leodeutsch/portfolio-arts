@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { CollectionCard } from "../../components/collections/CollectionCard";
+import { Copyright } from "../../components/copyright";
 import { useLanguage } from "../../contexts/LanguageContext";
 import type { Collection } from "../../types/";
 import * as S from "./styles";
 
-// Mock data - substituir com API real
 const mockCollections: Collection[] = [
   {
     id: "1",
@@ -56,7 +56,6 @@ export const Collections: React.FC = () => {
   const { t } = useLanguage();
 
   useEffect(() => {
-    // Simular carregamento de dados
     setTimeout(() => {
       setCollections(mockCollections);
       setLoading(false);
@@ -82,6 +81,8 @@ export const Collections: React.FC = () => {
           <CollectionCard key={collection.id} collection={collection} />
         ))}
       </S.CollectionsGrid>
+
+      <Copyright />
     </S.CollectionsContainer>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ArtworkGrid } from "../../components/collections/ArtworkGrid";
+import { Copyright } from "../../components/copyright";
 import { useLanguage } from "../../contexts/LanguageContext";
 import type { Artwork, Collection } from "../../types";
 import * as S from "./styles";
@@ -106,6 +107,8 @@ export const CollectionDetail: React.FC = () => {
       </S.Header>
 
       <ArtworkGrid artworks={artworks} />
+
+      <Copyright />
     </S.Container>
   );
 };

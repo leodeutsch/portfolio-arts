@@ -29,9 +29,11 @@ export const translations: Record<"pt" | "en", Translation> = {
     about: {
       title: "Sobre a Artista",
       biography: "Biografia",
-      exhibitions: "Exposições e Conquistas",
+      biographyText:
+        "Nasci na cidade de Gandu, região cacaueira do sul da Bahia. Ainda na infância, tive os primeiros contatos com tintas e pincéis, incentivada por uma tia que muito influenciou a minha história de vida. Mais tarde, ao lecionar Literatura Brasileira tornei-me fascinada, por vivenciar o universo imaginário descrito por escritores realistas e regionalistas, dos quais a temática se faz enraizada nas minhas obras. Mais tarde, nas Artes Plásticas, fiz da Pintura a minha ferramenta de expressão e visão de mundo.",
+      exhibitions: "Algumas Exposições Recentes",
       awards: "Prêmios",
-      visualArtist: "Artista Visual",
+      visualArtist: "Artista Plástica",
       basedIn: "Baseada em",
       artistJourney: "Trajetória Artística",
       creativeProcess: "Processo Criativo",
@@ -84,9 +86,11 @@ export const translations: Record<"pt" | "en", Translation> = {
     about: {
       title: "About the Artist",
       biography: "Biography",
-      exhibitions: "Exhibitions & Achievements",
+      biographyText:
+        "I was born in the city of Gandu, in the cocoa-growing region of southern Bahia. As a child, I had my first contact with paints and brushes, encouraged by an aunt who greatly influenced my life story. Later, when I taught Brazilian Literature, I became fascinated by experiencing the imaginary universe described by realist and regionalist writers, whose themes are rooted in my works. Later, in the Visual Arts, I made Painting my tool of expression and world view.",
+      exhibitions: "Some Recent Exhibitions",
       awards: "Awards",
-      visualArtist: "Visual Artist",
+      visualArtist: "Fine Artist",
       basedIn: "Based in",
       artistJourney: "Artistic Journey",
       creativeProcess: "Creative Process",

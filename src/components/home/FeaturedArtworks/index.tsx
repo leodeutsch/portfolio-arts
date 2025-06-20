@@ -1,6 +1,7 @@
 import React from "react";
 import { useLanguage } from "../../../contexts/LanguageContext";
 import type { Artwork } from "../../../types";
+import { Copyright } from "../../copyright";
 import * as S from "./styles";
 
 interface FeaturedArtworksProps {
@@ -37,6 +38,8 @@ export const FeaturedArtworks: React.FC<FeaturedArtworksProps> = ({
           {t("home.viewCollection")}
         </S.ViewAllButton>
       </S.Container>
+
+      <Copyright />
     </S.FeaturedSection>
   );
 };

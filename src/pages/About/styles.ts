@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { media } from "../../styles/breakpoints";
 
@@ -95,114 +96,22 @@ export const SectionContent = styled.div`
 
 export const ContactSection = styled.section`
   text-align: center;
-  padding: 3rem 0;
+  padding: 5rem 0 0 0;
   border-top: 1px solid ${({ theme }) => theme.colors.border};
   margin-bottom: 3rem;
 `;
 
-export const ContactTitle = styled.h3`
+export const ContactTitle = styled(Link)`
   font-size: 1.5rem;
-  margin-bottom: 2rem;
   color: ${({ theme }) => theme.colors.secondary};
-`;
-
-export const ContactButtons = styled.div`
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  ${media.mobile} {
-    gap: 1rem;
-  }
-`;
-
-export const ContactButton = styled.a`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  background-color: ${({ theme }) => theme.colors.secondary};
-  color: white;
+  border-width: 1px;
+  border-style: solid;
   border-radius: 4px;
-  font-weight: 500;
-  transition: all ${({ theme }) => theme.transitions.default};
+  border-color: ${({ theme }) => theme.colors.secondary};
+  padding: 0.8rem 1.2rem;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.primary};
-    transform: translateY(-2px);
-  }
-
-  ${media.mobile} {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
-  }
-`;
-
-export const EmailIcon = styled.span`
-  font-size: 1.2rem;
-`;
-
-export const InstagramIcon = styled.span`
-  font-size: 1.2rem;
-`;
-
-export const WhatsAppIcon = styled.span`
-  font-size: 1.2rem;
-`;
-
-export const SocialLinks = styled.div`
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-bottom: 2rem;
-`;
-
-export const SocialLink = styled.a`
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background-color: transparent;
-  border: 2px solid ${({ theme }) => theme.colors.border};
-  color: ${({ theme }) => theme.colors.textLight};
-  transition: all ${({ theme }) => theme.transitions.default};
-
-  &:hover {
-    border-color: ${({ theme }) => theme.colors.primary};
     color: ${({ theme }) => theme.colors.primary};
-    transform: translateY(-2px);
+    border-color: ${({ theme }) => theme.colors.primary};
   }
-`;
-
-// Ícones simplificados - você pode substituir por uma biblioteca de ícones
-export const TwitterIcon = styled.span`
-  &::before {
-    content: "𝕏";
-    font-size: 1.2rem;
-  }
-`;
-
-export const InstagramIconSocial = styled.span`
-  &::before {
-    content: "📷";
-    font-size: 1.2rem;
-  }
-`;
-
-export const FacebookIcon = styled.span`
-  &::before {
-    content: "f";
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    font-size: 1.3rem;
-  }
-`;
-
-export const Copyright = styled.p`
-  text-align: center;
-  color: ${({ theme }) => theme.colors.textLight};
-  font-size: 0.9rem;
 `;

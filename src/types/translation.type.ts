@@ -25,6 +25,7 @@ export interface Translation {
   about: {
     title: string;
     biography: string;
+    biographyText: string;
     exhibitions: string;
     awards: string;
     visualArtist: string;

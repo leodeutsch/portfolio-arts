@@ -1,6 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { Header } from "./components/common/Header";
+import { ScrollToTop } from "./components/scrollToTop";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { About } from "./pages/About";
 import { CollectionDetail } from "./pages/CollectionDetail";
@@ -17,6 +18,7 @@ function App() {
         <Router>
           <GlobalStyles />
           <Header />
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/collections" element={<Collections />} />

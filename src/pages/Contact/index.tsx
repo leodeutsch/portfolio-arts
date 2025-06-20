@@ -1,5 +1,6 @@
 import emailjs from "@emailjs/browser";
 import React, { useState } from "react";
+import { Copyright } from "../../components/copyright";
 import { contactConfig } from "../../config/contact";
 import { emailConfig } from "../../config/emailjs";
 import { useLanguage } from "../../contexts/LanguageContext";
@@ -182,6 +183,8 @@ export const Contact: React.FC = () => {
             </S.ContactDetails>
           </S.ContactItem>
         </S.ContactInfo>
+
+        <Copyright />
       </S.ContactContent>
     </S.ContactContainer>
   );
