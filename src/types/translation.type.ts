@@ -1,0 +1,54 @@
+export interface Translation {
+  nav: {
+    dashboard: string;
+    collections: string;
+    about: string;
+    contact: string;
+  };
+  home: {
+    recentWork: string;
+    featuredArtworks: string;
+    viewCollection: string;
+  };
+  common: {
+    view: string;
+    loading: string;
+    error: string;
+    back: string;
+  };
+  collections: {
+    title: string;
+    allCollections: string;
+    artworksCount: string;
+    description: string;
+  };
+  about: {
+    title: string;
+    biography: string;
+    exhibitions: string;
+    awards: string;
+    visualArtist: string;
+    basedIn: string;
+    artistJourney: string;
+    creativeProcess: string;
+    getInTouch: string;
+    email: string;
+    allRightsReserved: string;
+  };
+  contact: {
+    title: string;
+    getInTouch: string;
+    name: string;
+    email: string;
+    message: string;
+    send: string;
+    success: string;
+    namePlaceholder: string;
+    emailPlaceholder: string;
+    messagePlaceholder: string;
+    sending: string;
+    error: string;
+    contactInformation: string;
+    copied: string;
+  };
+}
