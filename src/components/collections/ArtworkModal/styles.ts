@@ -15,10 +15,15 @@ export const ModalOverlay = styled.div`
   padding: 2rem;
 `;
 
-export const ModalContent = styled.div`
+export const ModalContent = styled.div<{
+  $orientation: "portrait" | "landscape";
+}>`
   position: relative;
-  max-width: 1000px;
-  width: 100%;
+  width: auto;
+  max-width: min(
+    100vw,
+    ${({ $orientation }) => ($orientation === "portrait" ? "600px" : "1000px")}
+  );
   max-height: 90vh;
   background-color: white;
   border-radius: 8px;
@@ -54,18 +59,34 @@ export const CloseButton = styled.button`
 `;
 
 export const ImageContainer = styled.div`
-  flex: 1;
+  /* flex: 1; */
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #f5f5f5;
   overflow: hidden;
+  position: relative;
 
   img {
-    max-width: 100%;
-    max-height: 100%;
+    width: auto;
+    height: auto;
+    max-width: 90vw;
+    max-height: 80vh;
     object-fit: contain;
   }
+`;
+
+export const LoadingMessage = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: ${({ theme }) => theme.colors.textLight};
+  background-color: #f5f5f5;
 `;
 
 export const ArtworkInfo = styled.div`

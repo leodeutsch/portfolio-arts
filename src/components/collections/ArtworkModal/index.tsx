@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useLanguage } from "../../../contexts/LanguageContext";
 import type { Artwork } from "../../../types/";
 import { getImageKitUrl } from "../../../utils/imgkit";
 import * as S from "./styles";
@@ -12,6 +13,12 @@ export const ArtworkModal: React.FC<ArtworkModalProps> = ({
   artwork,
   onClose,
 }) => {
+  const { t } = useLanguage();
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [orientation, setOrientation] = useState<"portrait" | "landscape">(
+    "landscape"
+  );
+
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -28,6 +35,17 @@ export const ArtworkModal: React.FC<ArtworkModalProps> = ({
     };
   }, [onClose]);
 
+  const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    const { naturalWidth, naturalHeight } = e.currentTarget;
+    if (naturalHeight > naturalWidth) {
+      setOrientation("portrait");
+    } else {
+      setOrientation("landscape");
+    }
+
+    setImageLoaded(true);
+  };
+
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -36,11 +54,18 @@ export const ArtworkModal: React.FC<ArtworkModalProps> = ({
 
   return (
     <S.ModalOverlay onClick={handleBackdropClick}>
-      <S.ModalContent>
-        <S.CloseButton onClick={onClose}>×</S.CloseButton>
+      <S.ModalContent $orientation={orientation}>
+        {imageLoaded && <S.CloseButton onClick={onClose}>×</S.CloseButton>}
 
         <S.ImageContainer>
-          <img src={getImageKitUrl(artwork.imageUrl)} alt={artwork.title} />
+          {!imageLoaded && (
+            <S.LoadingMessage>{t("common.loading")}</S.LoadingMessage>
+          )}
+          <img
+            src={getImageKitUrl(artwork.imageUrl)}
+            alt={artwork.title}
+            onLoad={handleImageLoad}
+          />
         </S.ImageContainer>
 
         <S.ArtworkInfo>
