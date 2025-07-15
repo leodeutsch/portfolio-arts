@@ -2,7 +2,7 @@
   {
     "id": "1",
     "name": "Forma e Relevo",
-    "description": "Flores e formas",
+    "description": "Uma coleção que explora a beleza das formas e relevos naturais.",
     "coverImage": "flor-do-algodao-1.jpg?tr=w-800,h-800",
     "artworks": [
       {
@@ -135,16 +135,65 @@
   },
   {
     "id": "2",
-    "name": "Nova Coleção",
-    "description": "",
-    "coverImage": "",
+    "name": "Saveiros",
+    "description": "Uma coleção que captura a essência dos saveiros na Bahia.",
+    "coverImage": "linha-do-horizonte-em-movimento.jpg?tr=w-800,h-800",
     "artworks": [
       {
         "id": "2-1",
-        "title": "",
-        "collection": "Nova Coleção",
-        "imageUrl": "",
-        "thumbnailUrl": ""
+        "title": "Bahia de Todos os Tempos",
+        "collection": "Saveiros",
+        "imageUrl": "bahia-de-todos-os-tempos.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "bahia-de-todos-os-tempos.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "2-2",
+        "title": "Chegada Silenciosa",
+        "collection": "Saveiros",
+        "imageUrl": "chegada-silenciosa.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "chegada-silenciosa.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "2-4",
+        "title": "Dança das Velas",
+        "collection": "Saveiros",
+        "imageUrl": "danca-das-velas.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "danca-das-velas.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "2-5",
+        "title": "Linha do Horizonte em Movimento",
+        "collection": "Saveiros",
+        "imageUrl": "linha-do-horizonte-em-movimento.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "linha-do-horizonte-em-movimento.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "2-6",
+        "title": "Regata de Saveiros XII",
+        "collection": "Saveiros",
+        "imageUrl": "regata-de-saveiros-XII.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "regata-de-saveiros-XII.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "2-7",
+        "title": "Saveiros na Baía",
+        "collection": "Saveiros",
+        "imageUrl": "saveiros-na-baia.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "saveiros-na-baia.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "2-8",
+        "title": "Saveiros na Rampa do Mercado",
+        "collection": "Saveiros",
+        "imageUrl": "saveiros-na-rampa-do-mercado.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "saveiros-na-rampa-do-mercado.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "2-9",
+        "title": "Velas ao Vento",
+        "collection": "Saveiros",
+        "imageUrl": "velas-ao-vento.jpg?tr=w-1600,h-1600",
+        "thumbnailUrl": "velas-ao-vento.jpg?tr=w-800,h-800"
       }
     ]
   }
