@@ -1,18 +1,26 @@
-import { CircleX } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import { ChevronLeft, ChevronRight, CircleX } from "lucide-react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useLanguage } from "../../../contexts/LanguageContext";
 import type { Artwork } from "../../../types/";
 import { getImageKitUrl } from "../../../utils/imgkit";
 import * as S from "./styles";
 
 interface ArtworkModalProps {
-  artwork: Artwork;
+  artworks: Artwork[];
+  currentIndex: number;
   onClose: () => void;
+  onNext?: () => void;
+  onPrevious?: () => void;
+  showNavigation?: boolean;
 }
 
 export const ArtworkModal: React.FC<ArtworkModalProps> = ({
-  artwork,
+  artworks,
+  currentIndex,
   onClose,
+  onNext,
+  onPrevious,
+  showNavigation = true, // Default to true
 }) => {
   const { t } = useLanguage();
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -20,21 +28,31 @@ export const ArtworkModal: React.FC<ArtworkModalProps> = ({
     "landscape"
   );
 
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
+  const artwork = artworks[currentIndex];
+
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         onClose();
+      } else if (showNavigation && e.key === "ArrowRight" && onNext) {
+        onNext();
+      } else if (showNavigation && e.key === "ArrowLeft" && onPrevious) {
+        onPrevious();
       }
-    };
+    },
+    [onClose, onNext, onPrevious, showNavigation]
+  );
 
-    document.addEventListener("keydown", handleEscape);
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
     document.body.style.overflow = "hidden";
+    setImageLoaded(false); // Reset loading state for new image
 
     return () => {
-      document.removeEventListener("keydown", handleEscape);
+      document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "unset";
     };
-  }, [onClose]);
+  }, [currentIndex, handleKeyDown]);
 
   const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
     const { naturalWidth, naturalHeight } = e.currentTarget;
@@ -43,7 +61,6 @@ export const ArtworkModal: React.FC<ArtworkModalProps> = ({
     } else {
       setOrientation("landscape");
     }
-
     setImageLoaded(true);
   };
 
@@ -53,13 +70,27 @@ export const ArtworkModal: React.FC<ArtworkModalProps> = ({
     }
   };
 
+  if (!artwork) return null;
+
   return (
     <S.ModalOverlay onClick={handleBackdropClick}>
       <S.ModalContent $orientation={orientation}>
         {imageLoaded && (
-          <S.CloseButton onClick={onClose}>
-            <CircleX size={32} color="white" aria-label={t("common.close")} />
-          </S.CloseButton>
+          <>
+            <S.CloseButton onClick={onClose}>
+              <CircleX size={32} color="white" aria-label={t("common.close")} />
+            </S.CloseButton>
+            {showNavigation && onPrevious && (
+              <S.PrevButton onClick={onPrevious}>
+                <ChevronLeft size={48} color="rgba(255, 255, 255, 0.8)" />
+              </S.PrevButton>
+            )}
+            {showNavigation && onNext && (
+              <S.NextButton onClick={onNext}>
+                <ChevronRight size={48} color="rgba(255, 255, 255, 0.8)" />
+              </S.NextButton>
+            )}
+          </>
         )}
 
         <S.ImageContainer>
@@ -70,6 +101,7 @@ export const ArtworkModal: React.FC<ArtworkModalProps> = ({
             src={getImageKitUrl(artwork.imageUrl)}
             alt={artwork.title}
             onLoad={handleImageLoad}
+            key={artwork.id}
           />
         </S.ImageContainer>
 

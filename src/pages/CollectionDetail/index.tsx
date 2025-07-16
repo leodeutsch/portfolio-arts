@@ -1,3 +1,4 @@
+import { ArrowLeft } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ArtworkGrid } from "../../components/collections/ArtworkGrid";
@@ -37,7 +38,7 @@ export const CollectionDetail: React.FC = () => {
     <S.Container>
       <S.Header>
         <S.BackButton onClick={handleBack}>
-          <S.BackIcon>←</S.BackIcon>
+          <ArrowLeft size={20} />
           {t("common.back")}
         </S.BackButton>
         <S.CollectionInfo>

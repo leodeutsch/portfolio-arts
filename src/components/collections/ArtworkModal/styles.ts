@@ -48,6 +48,50 @@ export const CloseButton = styled.button`
   }
 `;
 
+export const NavButton = styled.button`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  ${media.tablet} {
+    width: 40px;
+    height: 40px;
+  }
+`;
+
+const ChevronButton = styled.button`
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  transition: all ${({ theme }) => theme.transitions.default};
+
+  &:hover {
+    transform: scale(1.4);
+  }
+`;
+
+export const PrevButton = styled(ChevronButton)`
+  left: 1rem;
+`;
+
+export const NextButton = styled(ChevronButton)`
+  right: 1rem;
+`;
+
 export const ImageContainer = styled.div`
   /* flex: 1; */
   display: flex;

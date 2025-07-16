@@ -9,23 +9,38 @@ interface ArtworkGridProps {
 }
 
 export const ArtworkGrid: React.FC<ArtworkGridProps> = ({ artworks }) => {
-  const [selectedArtwork, setSelectedArtwork] = useState<Artwork | null>(null);
+  const [selectedArtworkIndex, setSelectedArtworkIndex] = useState<number | null>(
+    null
+  );
 
-  const handleArtworkClick = (artwork: Artwork) => {
-    setSelectedArtwork(artwork);
+  const handleArtworkClick = (index: number) => {
+    setSelectedArtworkIndex(index);
   };
 
   const handleCloseModal = () => {
-    setSelectedArtwork(null);
+    setSelectedArtworkIndex(null);
+  };
+
+  const handleNext = () => {
+    if (selectedArtworkIndex === null) return;
+    const nextIndex = (selectedArtworkIndex + 1) % artworks.length;
+    setSelectedArtworkIndex(nextIndex);
+  };
+
+  const handlePrevious = () => {
+    if (selectedArtworkIndex === null) return;
+    const prevIndex =
+      (selectedArtworkIndex - 1 + artworks.length) % artworks.length;
+    setSelectedArtworkIndex(prevIndex);
   };
 
   return (
     <>
       <S.Grid>
-        {artworks.map((artwork) => (
+        {artworks.map((artwork, index) => (
           <S.ArtworkItem
             key={artwork.id}
-            onClick={() => handleArtworkClick(artwork)}
+            onClick={() => handleArtworkClick(index)}
           >
             <S.ArtworkImage>
               <img
@@ -40,8 +55,15 @@ export const ArtworkGrid: React.FC<ArtworkGridProps> = ({ artworks }) => {
         ))}
       </S.Grid>
 
-      {selectedArtwork && (
-        <ArtworkModal artwork={selectedArtwork} onClose={handleCloseModal} />
+      {selectedArtworkIndex !== null && (
+        <ArtworkModal
+          artworks={artworks}
+          currentIndex={selectedArtworkIndex}
+          onClose={handleCloseModal}
+          onNext={handleNext}
+          onPrevious={handlePrevious}
+          showNavigation={true}
+        />
       )}
     </>
   );

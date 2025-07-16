@@ -50,10 +50,6 @@ export const BackButton = styled.button`
   }
 `;
 
-export const BackIcon = styled.span`
-  font-size: 1.2rem;
-`;
-
 export const CollectionInfo = styled.div`
   text-align: center;
 `;

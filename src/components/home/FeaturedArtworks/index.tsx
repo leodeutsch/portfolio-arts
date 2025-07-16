@@ -13,15 +13,17 @@ interface FeaturedArtworksProps {
 export const FeaturedArtworks: React.FC<FeaturedArtworksProps> = ({
   artworks,
 }) => {
-  const [selectedArtwork, setSelectedArtwork] = useState<Artwork | null>(null);
+  const [selectedArtworkIndex, setSelectedArtworkIndex] = useState<number | null>(
+    null
+  );
   const { t } = useLanguage();
 
-  const handleArtworkClick = (artwork: Artwork) => {
-    setSelectedArtwork(artwork);
+  const handleArtworkClick = (index: number) => {
+    setSelectedArtworkIndex(index);
   };
 
   const handleCloseModal = () => {
-    setSelectedArtwork(null);
+    setSelectedArtworkIndex(null);
   };
 
   return (
@@ -30,10 +32,10 @@ export const FeaturedArtworks: React.FC<FeaturedArtworksProps> = ({
         <S.SectionTitle>{t("home.featuredArtworks")}</S.SectionTitle>
 
         <S.ArtworksGrid>
-          {artworks.map((artwork) => (
+          {artworks.map((artwork, index) => (
             <S.ArtworkCard
               key={artwork.id}
-              onClick={() => handleArtworkClick(artwork)}
+              onClick={() => handleArtworkClick(index)}
             >
               <S.ArtworkImage>
                 <img
@@ -51,8 +53,13 @@ export const FeaturedArtworks: React.FC<FeaturedArtworksProps> = ({
           ))}
         </S.ArtworksGrid>
 
-        {selectedArtwork && (
-          <ArtworkModal artwork={selectedArtwork} onClose={handleCloseModal} />
+        {selectedArtworkIndex !== null && (
+          <ArtworkModal
+            artworks={artworks}
+            currentIndex={selectedArtworkIndex}
+            onClose={handleCloseModal}
+            showNavigation={false}
+          />
         )}
 
         <S.ViewAllButton to="/collection">
