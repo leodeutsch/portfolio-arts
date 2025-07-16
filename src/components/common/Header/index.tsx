@@ -1,3 +1,4 @@
+import { Menu, X } from "lucide-react";
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useLanguage } from "../../../contexts/LanguageContext";
@@ -10,7 +11,7 @@ export const Header: React.FC = () => {
 
   const navItems = [
     { path: "/", label: t("nav.dashboard") },
-    { path: "/collections", label: t("nav.collections") },
+    { path: "/collection", label: t("nav.collections") },
     { path: "/about", label: t("nav.about") },
     { path: "/contact", label: t("nav.contact") },
   ];
@@ -21,6 +22,14 @@ export const Header: React.FC = () => {
         <S.Logo to="/">
           <S.LogoText>Rosa Rocha</S.LogoText>
         </S.Logo>
+
+        <S.MenuButton
+          aria-label="Toggle menu"
+          onClick={() => setIsMenuOpen((prev) => !prev)}
+          isOpen={isMenuOpen}
+        >
+          {!isMenuOpen ? <Menu size={32} /> : <X size={32} />}
+        </S.MenuButton>
 
         <S.Nav isOpen={isMenuOpen}>
           <S.NavList>

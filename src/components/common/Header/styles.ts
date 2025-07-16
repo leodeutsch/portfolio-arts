@@ -37,7 +37,7 @@ export const LogoText = styled.h1`
 export const Nav = styled.nav<{ isOpen: boolean }>`
   ${media.tablet} {
     position: fixed;
-    top: ${({ theme }) => theme.sizes.headerHeight};
+    top: ${({ isOpen, theme }) => (isOpen ? theme.sizes.headerHeight : 0)};
     left: 0;
     right: 0;
     background-color: ${({ theme }) => theme.colors.background};
@@ -98,5 +98,45 @@ export const LanguageButton = styled.button`
   &:hover {
     border-color: ${({ theme }) => theme.colors.primary};
     color: ${({ theme }) => theme.colors.primary};
+  }
+`;
+
+export const MenuButton = styled.button<{ isOpen: boolean }>`
+  display: none;
+
+  ${media.tablet} {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    z-index: 1001;
+
+    span {
+      height: 2px;
+      width: 100%;
+      background-color: ${({ theme }) => theme.colors.secondary};
+      transition: transform ${({ theme }) => theme.transitions.default},
+        opacity ${({ theme }) => theme.transitions.default};
+    }
+
+    ${({ isOpen }) =>
+      isOpen &&
+      css`
+        span:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+        span:nth-child(2) {
+          opacity: 0;
+        }
+        span:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+      `}
+  }
+
+  ${media.mobile} {
+    width: 24px;
+    height: 18px;
   }
 `;

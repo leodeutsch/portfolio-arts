@@ -40,20 +40,10 @@ export const CloseButton = styled.button`
   position: absolute;
   top: 1rem;
   right: 1rem;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 50%;
-  font-size: 2rem;
-  font-weight: 300;
   z-index: 1;
   transition: all ${({ theme }) => theme.transitions.default};
 
   &:hover {
-    background-color: white;
     transform: rotate(90deg);
   }
 `;

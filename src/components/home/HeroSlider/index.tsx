@@ -1,5 +1,7 @@
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { useLanguage } from "../../../contexts/LanguageContext";
+import { breakpoints } from "../../../styles/breakpoints";
 import type { Artwork } from "../../../types";
 import { getImageKitUrl } from "../../../utils/imgkit";
 import * as S from "./styles";
@@ -15,7 +17,22 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [hovered, setHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const { t } = useLanguage();
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      const matchMobile = window.matchMedia(
+        `(max-width: ${breakpoints.tablet})`
+      ).matches;
+      const hasTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+      setIsMobile(matchMobile || hasTouch);
+    };
+
+    checkIsMobile();
+    window.addEventListener("resize", checkIsMobile);
+    return () => window.removeEventListener("resize", checkIsMobile);
+  }, []);
 
   const handleClickNext = () => {
     if (currentIndex === artworks.length - 1) {
@@ -46,8 +63,12 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        <S.ArrowButton left hovered={hovered} onClick={handleClickPrev}>
-          {"<"}
+        <S.ArrowButton
+          left
+          hovered={hovered || isMobile}
+          onClick={handleClickPrev}
+        >
+          <ChevronLeft size={40} color="rgba(255, 255, 255, 0.6)" />
         </S.ArrowButton>
         {artworks.map((artwork, index) => (
           <S.Slide
@@ -58,8 +79,12 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
             }}
           />
         ))}
-        <S.ArrowButton right hovered={hovered} onClick={handleClickNext}>
-          {">"}
+        <S.ArrowButton
+          right
+          hovered={hovered || isMobile}
+          onClick={handleClickNext}
+        >
+          <ChevronRight size={40} color="rgba(255, 255, 255, 0.6)" />
         </S.ArrowButton>
       </S.SliderWrapper>
 

@@ -1,3 +1,4 @@
+import { CircleX } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { useLanguage } from "../../../contexts/LanguageContext";
 import type { Artwork } from "../../../types/";
@@ -55,7 +56,11 @@ export const ArtworkModal: React.FC<ArtworkModalProps> = ({
   return (
     <S.ModalOverlay onClick={handleBackdropClick}>
       <S.ModalContent $orientation={orientation}>
-        {imageLoaded && <S.CloseButton onClick={onClose}>×</S.CloseButton>}
+        {imageLoaded && (
+          <S.CloseButton onClick={onClose}>
+            <CircleX size={32} color="white" aria-label={t("common.close")} />
+          </S.CloseButton>
+        )}
 
         <S.ImageContainer>
           {!imageLoaded && (

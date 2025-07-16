@@ -22,7 +22,7 @@ export const CollectionDetail: React.FC = () => {
   }, [id]);
 
   const handleBack = () => {
-    navigate("/collections");
+    navigate("/collection");
   };
 
   if (loading) {

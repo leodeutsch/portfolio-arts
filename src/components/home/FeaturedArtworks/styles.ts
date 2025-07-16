@@ -36,13 +36,14 @@ export const ArtworksGrid = styled.div`
   }
 `;
 
-export const ArtworkCard = styled(Link)`
+export const ArtworkCard = styled.div`
   display: block;
   background: white;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: ${({ theme }) => theme.shadows.small};
   transition: all ${({ theme }) => theme.transitions.default};
+  cursor: pointer;
 
   &:hover {
     transform: translateY(-4px);
