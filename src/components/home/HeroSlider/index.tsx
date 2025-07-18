@@ -64,8 +64,8 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
         onMouseLeave={() => setHovered(false)}
       >
         <S.ArrowButton
-          left
-          hovered={hovered || isMobile}
+          $left
+          $hovered={hovered || isMobile}
           onClick={handleClickPrev}
         >
           <ChevronLeft size={40} color="rgba(255, 255, 255, 0.6)" />
