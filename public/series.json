@@ -98,17 +98,17 @@
       },
       {
         "id": "1-14",
-        "title": "Jardim Barroco",
-        "serie": "Forma e Relevo",
-        "imageUrl": "forma-e-relevo/jardim-barroco.jpg",
-        "thumbnailUrl": "forma-e-relevo/jardim-barroco.jpg?tr=w-800,h-800"
-      },
-      {
-        "id": "1-15",
         "title": "Silêncio Fluido",
         "serie": "Forma e Relevo",
         "imageUrl": "forma-e-relevo/silencio-fluido.jpg",
         "thumbnailUrl": "forma-e-relevo/silencio-fluido.jpg?tr=w-800,h-800"
+      },
+      {
+        "id": "1-15",
+        "title": "Jardim Barroco",
+        "serie": "Forma e Relevo",
+        "imageUrl": "forma-e-relevo/jardim-barroco.jpg",
+        "thumbnailUrl": "forma-e-relevo/jardim-barroco.jpg?tr=w-800,h-800"
       },
       {
         "id": "1-16",
