@@ -4,14 +4,14 @@ export const translations: Record<"pt" | "en", Translation> = {
   pt: {
     nav: {
       dashboard: "Dashboard",
-      collections: "Coleções",
+      series: "Séries da Artista",
       about: "Sobre",
       contact: "Contato",
     },
     home: {
       recentWork: "Trabalho Recente",
       featuredArtworks: "Obras em Destaque",
-      viewCollection: "Ver Coleção",
+      viewSerie: "Ver Série",
     },
     common: {
       view: "Ver",
@@ -19,20 +19,20 @@ export const translations: Record<"pt" | "en", Translation> = {
       error: "Erro ao carregar",
       back: "Voltar",
     },
-    collections: {
-      title: "Coleções",
-      allCollections: "Todas as Coleções",
+    series: {
+      title: "Séries",
+      allSeries: "Todas as Séries",
       artworksCount: "obras",
       description:
-        "Explore a diversa gama de coleções artísticas, cada uma apresentando um tema e estilo únicos. Mergulhe nas galerias para descobrir obras individuais dentro de cada coleção.",
-      viewCollection: "Ver Coleção",
+        "Explore a diversa gama de séries da artista, cada uma apresentando um tema e estilo únicos. Mergulhe nas galerias para descobrir obras individuais dentro de cada série.",
+      viewSerie: "Ver Série",
     },
     about: {
       title: "Sobre a Artista",
       biography: "Biografia",
       biographyText:
-        "Nasci na cidade de Gandu, região cacaueira do sul da Bahia. Ainda na infância, tive os primeiros contatos com tintas e pincéis, incentivada por uma tia que muito influenciou a minha história de vida. Mais tarde, ao lecionar Literatura Brasileira tornei-me fascinada, por vivenciar o universo imaginário descrito por escritores realistas e regionalistas, dos quais a temática se faz enraizada nas minhas obras. Mais tarde, nas Artes Plásticas, fiz da Pintura a minha ferramenta de expressão e visão de mundo.",
-      exhibitions: "Algumas Exposições Recentes",
+        "Nasci em Gandu, situada na região cacaueira do Sul da Bahia. Ainda criança, tive os primeiros contatos com tintas e pincéis, guiada pelo olhar atento da professora Ismênia, uma estimada tia – cuja presença marcante na minha vida foi um farol e inspiração, desde o início da minha caminhada. Após concluir o curso de Letras, mergulhei no universo denso e fascinante dos escritores realistas – cujas temáticas marcadas por humanidade e crítica social, passaram a habitar o meu imaginário e hoje reverberam nas minhas obras.Mais tarde, realizei o tão sonhado encontro com as Artes Plásticas, e na Pintura descobri a linguagem capaz de desnudar alma e revelar a minha visão de mundo. Por meio das cores e das formas, dou corpo à memória, ao tempo, ao aspecto cultural e à paisagem baiana a qual tanto me inspira.",
+      exhibitions: "Algumas Exposições",
       awards: "Prêmios",
       visualArtist: "Artista Plástica",
       basedIn: "Baseada em",
@@ -58,18 +58,24 @@ export const translations: Record<"pt" | "en", Translation> = {
       contactInformation: "Informações de Contato",
       copied: "Copiado!",
     },
+    seriesDetails: {
+      formRelief:
+        "Uma série que explora a beleza das formas e relevos naturais.",
+      sloops: "Uma série que captura a essência dos saveiros na Bahia.",
+      abstracts: "Uma série que explora a interação entre cores e formas.",
+    },
   },
   en: {
     nav: {
       dashboard: "Dashboard",
-      collections: "Collections",
+      series: "Artist Series",
       about: "About",
       contact: "Contact",
     },
     home: {
       recentWork: "Recent Work",
       featuredArtworks: "Featured Artworks",
-      viewCollection: "View Collection",
+      viewSerie: "View Serie",
     },
     common: {
       view: "View",
@@ -77,20 +83,20 @@ export const translations: Record<"pt" | "en", Translation> = {
       error: "Error loading",
       back: "Back",
     },
-    collections: {
-      title: "Collections",
-      allCollections: "All Collections",
+    series: {
+      title: "Series",
+      allSeries: "All Series",
       artworksCount: "artworks",
       description:
-        "Explore the diverse range of artistic collections, each showcasing a unique theme and style. Dive into the galleries to discover individual artworks within each collection.",
-      viewCollection: "View Collection",
+        "Explore the diverse range of artistic series, each showcasing a unique theme and style. Dive into the galleries to discover individual artworks within each serie.",
+      viewSerie: "View Serie",
     },
     about: {
       title: "About the Artist",
       biography: "Biography",
       biographyText:
-        "I was born in the city of Gandu, in the cocoa-growing region of southern Bahia. As a child, I had my first contact with paints and brushes, encouraged by an aunt who greatly influenced my life story. Later, when I taught Brazilian Literature, I became fascinated by experiencing the imaginary universe described by realist and regionalist writers, whose themes are rooted in my works. Later, in the Visual Arts, I made Painting my tool of expression and world view.",
-      exhibitions: "Some Recent Exhibitions",
+        "I was born in Gandu, located in the cocoa-growing region of southern Bahia. As a child, I had my first contact with paints and brushes, guided by the watchful eye of Professor Ismênia, a dear aunt – whose remarkable presence in my life was a beacon and inspiration, from the beginning of my journey. After completing my degree in Literature, I immersed myself in the dense and fascinating universe of realist writers – whose themes, marked by humanity and social criticism, began to inhabit my imagination and today reverberate in my works. Later, I realized the long-awaited encounter with the Visual Arts, and in Painting I discovered the language capable of baring the soul and revealing my vision of the world.",
+      exhibitions: "Some Exhibitions",
       awards: "Awards",
       visualArtist: "Fine Artist",
       basedIn: "Based in",
@@ -115,6 +121,13 @@ export const translations: Record<"pt" | "en", Translation> = {
       error: "Error sending message. Please try again.",
       contactInformation: "Contact Information",
       copied: "Copied!",
+    },
+    seriesDetails: {
+      formRelief:
+        "A series that explores the beauty of natural shapes and reliefs.",
+      sloops: "A series that captures the essence of the saveiros in Bahia.",
+      abstracts:
+        "A series that explores the interaction between colors and forms.",
     },
   },
 };

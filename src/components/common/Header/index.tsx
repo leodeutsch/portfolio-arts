@@ -1,7 +1,7 @@
 import { Menu, X } from "lucide-react";
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { useLanguage } from "../../../contexts/LanguageContext";
+import { useLanguage } from "../../../hooks/useLanguage";
 import * as S from "./styles";
 
 export const Header: React.FC = () => {
@@ -11,10 +11,15 @@ export const Header: React.FC = () => {
 
   const navItems = [
     { path: "/", label: t("nav.dashboard") },
-    { path: "/collection", label: t("nav.collections") },
+    { path: "/series", label: t("nav.series") },
     { path: "/about", label: t("nav.about") },
     { path: "/contact", label: t("nav.contact") },
   ];
+
+  const isPathActive = (path: string) => {
+    if (path === "/") return location.pathname === "/";
+    return location.pathname.startsWith(path);
+  };
 
   return (
     <S.HeaderWrapper>
@@ -37,7 +42,7 @@ export const Header: React.FC = () => {
               <S.NavItem key={item.path}>
                 <S.NavLink
                   to={item.path}
-                  active={location.pathname === item.path}
+                  active={isPathActive(item.path)}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}

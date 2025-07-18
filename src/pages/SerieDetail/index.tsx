@@ -1,37 +1,38 @@
 import { ArrowLeft } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { ArtworkGrid } from "../../components/collections/ArtworkGrid";
 import { Copyright } from "../../components/copyright";
-import { useLanguage } from "../../contexts/LanguageContext";
-import { fetchCollectionById } from "../../services/collectionService";
-import type { Collection } from "../../types";
+import { ArtworkGrid } from "../../components/series/ArtworkGrid";
+import { useLanguage } from "../../hooks/useLanguage";
+import { fetchSerieById } from "../../services/serieService";
+import type { Serie } from "../../types";
+import { getSerieDescription } from "../../utils/seriesDescriptions";
 import * as S from "./styles";
 
-export const CollectionDetail: React.FC = () => {
+export const SerieDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { t } = useLanguage();
-  const [collection, setCollection] = useState<Collection | null>(null);
+  const [serie, setSerie] = useState<Serie | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (!id) return;
-    fetchCollectionById(id)
-      .then((col) => setCollection(col || null))
+    fetchSerieById(id)
+      .then((col) => setSerie(col || null))
       .finally(() => setLoading(false));
   }, [id]);
 
   const handleBack = () => {
-    navigate("/collection");
+    navigate("/series");
   };
 
   if (loading) {
     return <S.LoadingContainer>{t("common.loading")}</S.LoadingContainer>;
   }
 
-  if (!collection) {
-    return <S.NotFound>Collection not found</S.NotFound>;
+  if (!serie) {
+    return <S.NotFound>Serie not found</S.NotFound>;
   }
 
   return (
@@ -41,17 +42,17 @@ export const CollectionDetail: React.FC = () => {
           <ArrowLeft size={20} />
           {t("common.back")}
         </S.BackButton>
-        <S.CollectionInfo>
-          <S.CollectionTitle>{collection.name}</S.CollectionTitle>
-          <S.CollectionDescription>
-            {collection.description}
-          </S.CollectionDescription>
+        <S.SerieInfo>
+          <S.SerieTitle>{serie.name}</S.SerieTitle>
+          <S.SerieDescription>
+            {getSerieDescription(serie.id, t)}
+          </S.SerieDescription>
           <S.ArtworkCount>
-            {collection.artworks.length} {t("collections.artworksCount")}
+            {serie.artworks.length} {t("series.artworksCount")}
           </S.ArtworkCount>
-        </S.CollectionInfo>
+        </S.SerieInfo>
       </S.Header>
-      <ArtworkGrid artworks={collection.artworks} />
+      <ArtworkGrid artworks={serie.artworks} />
       <Copyright />
     </S.Container>
   );

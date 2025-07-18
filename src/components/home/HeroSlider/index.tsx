@@ -1,6 +1,6 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import { useLanguage } from "../../../contexts/LanguageContext";
+import { useLanguage } from "../../../hooks/useLanguage";
 import { breakpoints } from "../../../styles/breakpoints";
 import type { Artwork } from "../../../types";
 import { getImageKitUrl } from "../../../utils/imgkit";
@@ -8,12 +8,12 @@ import * as S from "./styles";
 
 interface HeroSliderProps {
   artworks: Artwork[];
-  collectionName: string;
+  serieName: string;
 }
 
 export const HeroSlider: React.FC<HeroSliderProps> = ({
   artworks,
-  collectionName,
+  serieName,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [hovered, setHovered] = useState(false);
@@ -89,8 +89,8 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
       </S.SliderWrapper>
 
       <S.SliderContent>
-        <S.CollectionTitle>{t("home.recentWork")}</S.CollectionTitle>
-        <S.CollectionName>{collectionName}</S.CollectionName>
+        <S.SerieTitle>{t("home.recentWork")}</S.SerieTitle>
+        <S.SerieName>{serieName}</S.SerieName>
       </S.SliderContent>
 
       <S.Indicators>

@@ -50,11 +50,11 @@ export const BackButton = styled.button`
   }
 `;
 
-export const CollectionInfo = styled.div`
+export const SerieInfo = styled.div`
   text-align: center;
 `;
 
-export const CollectionTitle = styled.h1`
+export const SerieTitle = styled.h1`
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: ${({ theme }) => theme.colors.secondary};
@@ -64,7 +64,7 @@ export const CollectionTitle = styled.h1`
   }
 `;
 
-export const CollectionDescription = styled.p`
+export const SerieDescription = styled.p`
   font-size: 1.1rem;
   color: ${({ theme }) => theme.colors.textLight};
   max-width: 600px;

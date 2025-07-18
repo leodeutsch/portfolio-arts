@@ -1,14 +1,14 @@
 export interface Translation {
   nav: {
     dashboard: string;
-    collections: string;
+    series: string;
     about: string;
     contact: string;
   };
   home: {
     recentWork: string;
     featuredArtworks: string;
-    viewCollection: string;
+    viewSerie: string;
   };
   common: {
     view: string;
@@ -16,12 +16,12 @@ export interface Translation {
     error: string;
     back: string;
   };
-  collections: {
+  series: {
     title: string;
-    allCollections: string;
+    allSeries: string;
     artworksCount: string;
     description: string;
-    viewCollection: string;
+    viewSerie: string;
   };
   about: {
     title: string;
@@ -52,5 +52,10 @@ export interface Translation {
     error: string;
     contactInformation: string;
     copied: string;
+  };
+  seriesDetails?: {
+    formRelief?: string;
+    sloops?: string;
+    abstracts?: string;
   };
 }

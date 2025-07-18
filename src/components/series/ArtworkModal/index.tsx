@@ -1,6 +1,6 @@
 import { ChevronLeft, ChevronRight, CircleX } from "lucide-react";
 import React, { useCallback, useEffect, useState } from "react";
-import { useLanguage } from "../../../contexts/LanguageContext";
+import { useLanguage } from "../../../hooks/useLanguage";
 import type { Artwork } from "../../../types/";
 import { getImageKitUrl } from "../../../utils/imgkit";
 import * as S from "./styles";

@@ -4,7 +4,7 @@ import { media } from "../../../styles/breakpoints";
 export const SliderContainer = styled.section`
   position: relative;
   width: 100%;
-  height: 60vh;
+  height: 82vh;
   min-height: 400px;
   overflow: hidden;
   margin-top: ${({ theme }) => theme.sizes.headerHeight};
@@ -61,7 +61,7 @@ export const SliderContent = styled.div`
   }
 `;
 
-export const CollectionTitle = styled.h2`
+export const SerieTitle = styled.h2`
   font-size: 1rem;
   font-weight: 400;
   text-transform: uppercase;
@@ -69,7 +69,7 @@ export const CollectionTitle = styled.h2`
   margin-bottom: 0.5rem;
 `;
 
-export const CollectionName = styled.h3`
+export const SerieName = styled.h3`
   font-size: 2.5rem;
   font-weight: 700;
 

@@ -1,7 +1,7 @@
 export interface Artwork {
   id: string;
   title: string;
-  collection: string;
+  serie: string;
   imageUrl: string;
   thumbnailUrl: string;
   description?: string;
@@ -9,7 +9,7 @@ export interface Artwork {
   featured?: boolean;
 }
 
-export interface Collection {
+export interface Serie {
   id: string;
   name: string;
   description: string;

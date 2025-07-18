@@ -1,6 +1,6 @@
 import React from "react";
 import { Copyright } from "../../components/copyright";
-import { useLanguage } from "../../contexts/LanguageContext";
+import { useLanguage } from "../../hooks/useLanguage";
 import * as S from "./styles";
 
 export const About: React.FC = () => {

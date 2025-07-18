@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { useLanguage } from "../../../contexts/LanguageContext";
+import { useLanguage } from "../../../hooks/useLanguage";
 import type { Artwork } from "../../../types";
 import { getImageKitUrl } from "../../../utils/imgkit";
-import { ArtworkModal } from "../../collections/ArtworkModal";
 import { Copyright } from "../../copyright";
+import { ArtworkModal } from "../../series/ArtworkModal";
 import * as S from "./styles";
 
 interface FeaturedArtworksProps {
@@ -13,9 +13,9 @@ interface FeaturedArtworksProps {
 export const FeaturedArtworks: React.FC<FeaturedArtworksProps> = ({
   artworks,
 }) => {
-  const [selectedArtworkIndex, setSelectedArtworkIndex] = useState<number | null>(
-    null
-  );
+  const [selectedArtworkIndex, setSelectedArtworkIndex] = useState<
+    number | null
+  >(null);
   const { t } = useLanguage();
 
   const handleArtworkClick = (index: number) => {
@@ -62,9 +62,7 @@ export const FeaturedArtworks: React.FC<FeaturedArtworksProps> = ({
           />
         )}
 
-        <S.ViewAllButton to="/collection">
-          {t("home.viewCollection")}
-        </S.ViewAllButton>
+        <S.ViewAllButton to="/series/1">{t("home.viewSerie")}</S.ViewAllButton>
       </S.Container>
 
       <Copyright />

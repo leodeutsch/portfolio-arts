@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Copyright } from "../../components/copyright";
 import { contactConfig } from "../../config/contact";
 import { emailConfig } from "../../config/emailjs";
-import { useLanguage } from "../../contexts/LanguageContext";
+import { useLanguage } from "../../hooks/useLanguage";
 import * as S from "./styles";
 
 export const Contact: React.FC = () => {

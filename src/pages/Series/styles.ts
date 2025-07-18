@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { media } from "../../styles/breakpoints";
 
-export const CollectionsContainer = styled.main`
+export const SeriesContainer = styled.main`
   min-height: 100vh;
   padding: calc(${({ theme }) => theme.sizes.headerHeight} + 3rem) 2rem 3rem;
   max-width: ${({ theme }) => theme.sizes.maxWidth};
@@ -44,7 +44,7 @@ export const Description = styled.p`
   }
 `;
 
-export const CollectionsGrid = styled.div`
+export const SeriesGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2.5rem;
