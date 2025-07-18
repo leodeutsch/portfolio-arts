@@ -69,7 +69,7 @@ export const translations: Record<"pt" | "en", Translation> = {
   en: {
     nav: {
       dashboard: "Dashboard",
-      series: "Artist Series",
+      series: "Artist's Series",
       about: "About",
       contact: "Contact",
     },
