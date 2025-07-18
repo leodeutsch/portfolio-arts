@@ -154,7 +154,7 @@ export const Contact: React.FC = () => {
             <S.IconWrapper>
               <img
                 alt="Email"
-                src="/public/envelope.png"
+                src="/envelope.png"
                 style={{ width: "24px", height: "24px" }}
               />
             </S.IconWrapper>
@@ -171,7 +171,7 @@ export const Contact: React.FC = () => {
             <S.IconWrapper>
               <img
                 alt="WhatsApp"
-                src="/public/whatsapp.png"
+                src="/whatsapp.png"
                 style={{ width: "24px", height: "24px" }}
               />
             </S.IconWrapper>
@@ -185,7 +185,7 @@ export const Contact: React.FC = () => {
             <S.IconWrapper>
               <img
                 alt="Instagram"
-                src="/public/instagram.png"
+                src="/instagram.png"
                 style={{ width: "24px", height: "24px" }}
               />
             </S.IconWrapper>
