@@ -98,16 +98,16 @@ export const Indicator = styled.button<{ active: boolean }>`
 `;
 
 export const ArrowButton = styled.button<{
-  left?: boolean;
-  right?: boolean;
-  hovered?: boolean;
+  $left?: boolean;
+  $right?: boolean;
+  $hovered?: boolean;
 }>`
-  opacity: ${({ hovered }) => (hovered ? 1 : 0)};
-  pointer-events: ${({ hovered }) => (hovered ? "auto" : "none")};
+  opacity: ${({ $hovered }) => ($hovered ? 1 : 0)};
+  pointer-events: ${({ $hovered }) => ($hovered ? "auto" : "none")};
   position: absolute;
   top: 50%;
-  ${({ left }) => left && "left: 2rem;"}
-  ${({ right }) => right && "right: 2rem;"}
+  ${({ $left }) => $left && "left: 2rem;"}
+  ${({ $right }) => $right && "right: 2rem;"}
   cursor: pointer;
   z-index: 4;
   transition: all ${({ theme }) => theme.transitions.default};
@@ -116,8 +116,8 @@ export const ArrowButton = styled.button<{
     width: 40px;
     height: 40px;
     font-size: 1.5rem;
-    ${({ left }) => left && "left: 1rem;"}
-    ${({ right }) => right && "right: 1rem;"}
+    ${({ $left }) => $left && "left: 1rem;"}
+    ${({ $right }) => $right && "right: 1rem;"}
   }
 
   &:focus {

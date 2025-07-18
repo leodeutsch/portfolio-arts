@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { media } from "../../../styles/breakpoints";
 
-export const HeaderWrapper = styled.header`
+export const HeaderWrapper = styled.header<{ visible: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
@@ -10,6 +10,11 @@ export const HeaderWrapper = styled.header`
   background-color: ${({ theme }) => theme.colors.background};
   box-shadow: ${({ theme }) => theme.shadows.small};
   z-index: 1000;
+  transition:
+    transform 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
+  transform: ${({ visible }) => (visible ? "translateY(0)" : "translateY(-100%)")};
+  visibility: ${({ visible }) => (visible ? "visible" : "hidden")};
 `;
 
 export const HeaderContainer = styled.div`

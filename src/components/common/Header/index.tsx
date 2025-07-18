@@ -1,11 +1,13 @@
 import { Menu, X } from "lucide-react";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useLanguage } from "../../../hooks/useLanguage";
 import * as S from "./styles";
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
   const location = useLocation();
   const { language, toggleLanguage, t } = useLanguage();
 
@@ -21,8 +23,29 @@ export const Header: React.FC = () => {
     return location.pathname.startsWith(path);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const threshold = window.innerHeight * 0.3;
+
+      if (currentScrollY > lastScrollY.current && currentScrollY > threshold) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <S.HeaderWrapper>
+    <S.HeaderWrapper visible={isVisible}>
       <S.HeaderContainer>
         <S.Logo to="/">
           <S.LogoText>Rosa Rocha</S.LogoText>

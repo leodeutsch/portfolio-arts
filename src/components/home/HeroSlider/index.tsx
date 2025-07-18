@@ -80,8 +80,8 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
           />
         ))}
         <S.ArrowButton
-          right
-          hovered={hovered || isMobile}
+          $right
+          $hovered={hovered || isMobile}
           onClick={handleClickNext}
         >
           <ChevronRight size={40} color="rgba(255, 255, 255, 0.6)" />
