@@ -57,6 +57,7 @@ export const translations: Record<"pt" | "en", Translation> = {
       error: "Erro ao enviar mensagem. Tente novamente.",
       contactInformation: "Informações de Contato",
       copied: "Copiado!",
+      sendMessage: "Enviar Mensagem",
     },
     seriesDetails: {
       formRelief:
@@ -121,6 +122,7 @@ export const translations: Record<"pt" | "en", Translation> = {
       error: "Error sending message. Please try again.",
       contactInformation: "Contact Information",
       copied: "Copied!",
+      sendMessage: "Send Message",
     },
     seriesDetails: {
       formRelief:

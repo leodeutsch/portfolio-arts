@@ -152,7 +152,11 @@ export const Contact: React.FC = () => {
 
           <S.ContactItem onClick={handleEmailClick}>
             <S.IconWrapper>
-              <S.EmailIcon>✉</S.EmailIcon>
+              <img
+                alt="Email"
+                src="/public/envelope.png"
+                style={{ width: "24px", height: "24px" }}
+              />
             </S.IconWrapper>
             <S.ContactDetails>
               <S.ContactLabel>Email</S.ContactLabel>
@@ -165,17 +169,25 @@ export const Contact: React.FC = () => {
 
           <S.ContactItem onClick={handleWhatsAppClick}>
             <S.IconWrapper>
-              <S.WhatsAppIcon>💬</S.WhatsAppIcon>
+              <img
+                alt="WhatsApp"
+                src="/public/whatsapp.png"
+                style={{ width: "24px", height: "24px" }}
+              />
             </S.IconWrapper>
             <S.ContactDetails>
               <S.ContactLabel>WhatsApp</S.ContactLabel>
-              <S.ContactValue>Enviar mensagem</S.ContactValue>
+              <S.ContactValue>{t("contact.sendMessage")}</S.ContactValue>
             </S.ContactDetails>
           </S.ContactItem>
 
           <S.ContactItem onClick={handleInstagramClick}>
             <S.IconWrapper>
-              <S.InstagramIcon>📷</S.InstagramIcon>
+              <img
+                alt="Instagram"
+                src="/public/instagram.png"
+                style={{ width: "24px", height: "24px" }}
+              />
             </S.IconWrapper>
             <S.ContactDetails>
               <S.ContactLabel>Instagram</S.ContactLabel>
