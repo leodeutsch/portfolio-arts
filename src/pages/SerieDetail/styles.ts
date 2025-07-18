@@ -78,3 +78,9 @@ export const ArtworkCount = styled.p`
   text-transform: uppercase;
   letter-spacing: 1px;
 `;
+
+export const ErrorContainer = styled.div`
+  color: red;
+  padding: 16px;
+  text-align: center;
+`;
