@@ -5,6 +5,9 @@ import { contactConfig } from "../../config/contact";
 import { emailConfig } from "../../config/emailjs";
 import { useLanguage } from "../../hooks/useLanguage";
 import * as S from "./styles";
+import EmailIcon from "/public/envelope.png";
+import InstagramIcon from "/public/instagram.png";
+import WhatsAppIcon from "/public/whatsapp.png";
 
 export const Contact: React.FC = () => {
   const { t } = useLanguage();
@@ -154,7 +157,7 @@ export const Contact: React.FC = () => {
             <S.IconWrapper>
               <img
                 alt="Email"
-                src="/envelope.png"
+                src={EmailIcon}
                 style={{ width: "24px", height: "24px" }}
               />
             </S.IconWrapper>
@@ -171,7 +174,7 @@ export const Contact: React.FC = () => {
             <S.IconWrapper>
               <img
                 alt="WhatsApp"
-                src="/whatsapp.png"
+                src={WhatsAppIcon}
                 style={{ width: "24px", height: "24px" }}
               />
             </S.IconWrapper>
@@ -185,7 +188,7 @@ export const Contact: React.FC = () => {
             <S.IconWrapper>
               <img
                 alt="Instagram"
-                src="/instagram.png"
+                src={InstagramIcon}
                 style={{ width: "24px", height: "24px" }}
               />
             </S.IconWrapper>
