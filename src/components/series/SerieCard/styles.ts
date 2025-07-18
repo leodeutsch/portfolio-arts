@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Card = styled.article`
   cursor: pointer;
   transition: transform ${({ theme }) => theme.transitions.default};
+  margin-bottom: 5vh;
 
   &:hover {
     transform: translateY(-4px);
@@ -16,6 +17,9 @@ export const ImageContainer = styled.div`
   border-radius: 8px;
   background-color: #f5f5f5;
   box-shadow: ${({ theme }) => theme.shadows.small};
+
+  height: 100%;
+  width: 100%;
 `;
 
 export const Image = styled.img`

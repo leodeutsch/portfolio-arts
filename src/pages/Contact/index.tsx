@@ -4,10 +4,10 @@ import { Copyright } from "../../components/copyright";
 import { contactConfig } from "../../config/contact";
 import { emailConfig } from "../../config/emailjs";
 import { useLanguage } from "../../hooks/useLanguage";
+import EmailIcon from "../../images/envelope.png";
+import InstagramIcon from "../../images/instagram.png";
+import WhatsAppIcon from "../../images/whatsapp.png";
 import * as S from "./styles";
-import EmailIcon from "/public/envelope.png";
-import InstagramIcon from "/public/instagram.png";
-import WhatsAppIcon from "/public/whatsapp.png";
 
 export const Contact: React.FC = () => {
   const { t } = useLanguage();
