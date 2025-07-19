@@ -33,6 +33,7 @@ export interface Translation {
     basedIn: string;
     artistJourney: string;
     creativeProcess: string;
+    creativeProcessDescription: string;
     getInTouch: string;
     email: string;
     allRightsReserved: string;

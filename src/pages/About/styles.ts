@@ -79,6 +79,7 @@ export const SectionContent = styled.div`
   color: ${({ theme }) => theme.colors.text};
   line-height: 1.8;
   font-size: 1.05rem;
+  white-space: pre-wrap;
 
   p {
     margin-bottom: 1rem;
