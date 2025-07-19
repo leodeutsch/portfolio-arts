@@ -10,6 +10,8 @@ export const Header: React.FC = () => {
   const lastScrollY = useRef(0);
   const location = useLocation();
   const { language, toggleLanguage, t } = useLanguage();
+  const navRef = useRef<HTMLElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   const navItems = [
     { path: "/", label: t("nav.dashboard") },
@@ -28,6 +30,11 @@ export const Header: React.FC = () => {
       const currentScrollY = window.scrollY;
       const threshold = window.innerHeight * 0.3;
 
+      // Closes menu on scroll on mobile
+      if (isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+
       if (currentScrollY > lastScrollY.current && currentScrollY > threshold) {
         setIsVisible(false);
       } else {
@@ -42,7 +49,28 @@ export const Header: React.FC = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        navRef.current &&
+        !navRef.current.contains(event.target as Node) &&
+        menuButtonRef.current &&
+        !menuButtonRef.current.contains(event.target as Node)
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
   return (
     <S.HeaderWrapper visible={isVisible}>
@@ -52,6 +80,7 @@ export const Header: React.FC = () => {
         </S.Logo>
 
         <S.MenuButton
+          ref={menuButtonRef}
           aria-label="Toggle menu"
           onClick={() => setIsMenuOpen((prev) => !prev)}
           isOpen={isMenuOpen}
@@ -59,7 +88,7 @@ export const Header: React.FC = () => {
           {!isMenuOpen ? <Menu size={32} /> : <X size={32} />}
         </S.MenuButton>
 
-        <S.Nav isOpen={isMenuOpen}>
+        <S.Nav ref={navRef} isOpen={isMenuOpen}>
           <S.NavList>
             {navItems.map((item) => (
               <S.NavItem key={item.path}>
