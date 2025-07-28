@@ -116,3 +116,27 @@ export const ContactTitle = styled(Link)`
     border-color: ${({ theme }) => theme.colors.primary};
   }
 `;
+
+export const PortfolioSection = styled.section`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 0.5fr));
+  gap: 1.5rem;
+`;
+
+export const PortfolioButton = styled.a`
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  transition: all ${({ theme }) => theme.transitions.default};
+  box-shadow: ${({ theme }) => theme.shadows.small};
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.secondary};
+    transform: translateY(-3px);
+    box-shadow: ${({ theme }) => theme.shadows.medium};
+  }
+`;
