@@ -14,6 +14,7 @@ export const SerieDetail: React.FC = () => {
   const navigate = useNavigate();
   const { t } = useLanguage();
   const [serie, setSerie] = useState<Serie | null>(null);
+  const [serieLength, setSerieLength] = useState<number>(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -29,6 +30,10 @@ export const SerieDetail: React.FC = () => {
       })
       .finally(() => setLoading(false));
   }, [id, t]);
+
+  useEffect(() => {
+    setSerieLength(serie?.artworks.length || 0);
+  }, [serie]);
 
   const handleBack = () => {
     navigate("/series");
@@ -59,7 +64,7 @@ export const SerieDetail: React.FC = () => {
             {getSerieDescription(serie.id, t)}
           </S.SerieDescription>
           <S.ArtworkCount>
-            {t("series.artworksCount") + { count: serie.artworks.length }}
+            {t("series.artworksCount") + " " + serieLength}
           </S.ArtworkCount>
         </S.SerieInfo>
       </S.Header>
