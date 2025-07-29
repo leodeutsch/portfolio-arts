@@ -32,9 +32,9 @@ export const translations: Record<"pt" | "en", Translation> = {
       biography: "Biografia",
       biographyText: `Nasci em Gandu, situada na região cacaueira do Sul da Bahia. Ainda criança, tive os primeiros contatos com tintas e pincéis, guiada pelo olhar atento da professora Ismênia, uma estimada tia – cuja presença marcante na minha vida foi um farol e inspiração, desde o início da minha caminhada.
 Após concluir o curso de Letras, mergulhei no universo denso e fascinante dos escritores realistas – cujas temáticas marcadas por humanidade e crítica social, passaram a habitar o meu imaginário e hoje reverberam nas minhas obras.
-Mais tarde, real-izei o tão sonhado encontro com as Artes Plásticas, e na Pintura descobri a linguagem capaz de desnudar alma e revelar a minha visão de mundo. Por meio das cores e das formas, dou corpo à memória, ao tempo, ao aspecto cultural e à paisagem baiana a qual tanto me inspira.`,
+Mais tarde, realizei o tão sonhado encontro com as Artes Plásticas, e na Pintura descobri a linguagem capaz de desnudar alma e revelar a minha visão de mundo. Por meio das cores e das formas, dou corpo à memória, ao tempo, ao aspecto cultural e à paisagem baiana a qual tanto me inspira.`,
       exhibitions: "Algumas Exposições",
-      awards: "Prêmios",
+      institucional: "Obras Institucionalizadas",
       visualArtist: "Artista Plástica",
       basedIn: "Reside em",
       artistJourney: "Trajetória Artística",
@@ -45,6 +45,8 @@ Cada tela é um processo intuitivo, quase ritualístico, onde a matéria se torn
 Minha arte se ancora na cultura baiana, mas não se limita a ela: ela é memória, identidade e tempo pulsando em cor. É uma maneira de contar histórias com camadas, relevos e ritmos próprios. Pintar para mim é desnudar a alma e deixá-la ressoar na superfície da tela.`,
       getInTouch: "Entre em Contato",
       email: "E-mail",
+      viewSloopsPortfolio: "Ver Portfólio de Saveiros",
+      viewBlackWomenPortfolio: "Ver Portfólio das Mulheres Negras",
       allRightsReserved: "Todos os direitos reservados.",
     },
     contact: {
@@ -104,7 +106,7 @@ Minha arte se ancora na cultura baiana, mas não se limita a ela: ela é memóri
 After completing my degree in Literature, I immersed myself in the dense and fascinating universe of realist writers – whose themes, marked by humanity and social criticism, began to inhabit my imagination and today reverberate in my works.
 Later, I realized the long-awaited encounter with the Visual Arts, and in Painting I discovered the language capable of baring the soul and revealing my vision of the world.`,
       exhibitions: "Some Exhibitions",
-      awards: "Awards",
+      institucional: "Institutionalized Works",
       visualArtist: "Fine Artist",
       basedIn: "Reside in",
       artistJourney: "Artistic Journey",
@@ -115,6 +117,8 @@ Each canvas is an intuitive, almost ritualistic process, where matter becomes la
 My art is anchored in Bahian culture, but not limited to it: it is memory, identity, and time pulsating in color. It's a way of telling stories with layers, reliefs, and rhythms of its own. Painting, for me, is about baring the soul and letting it resonate on the surface of the canvas.`,
       getInTouch: "Get in Touch",
       email: "Email",
+      viewSloopsPortfolio: "See Sloops Portfolio",
+      viewBlackWomenPortfolio: "See Black Women Portfolio",
       allRightsReserved: "All rights reserved.",
     },
     contact: {
