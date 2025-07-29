@@ -44,10 +44,10 @@ export const Title = styled.h1`
 
 export const FormSection = styled.section`
   background: white;
-  padding: 1rem;
-  /* border-radius: 8px;
-  box-shadow: ${({ theme }) => theme.shadows.medium}; */
-  margin-bottom: 4.5rem;
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: ${({ theme }) => theme.shadows.medium};
+  margin-bottom: 3rem;
 
   ${media.tablet} {
     padding: 2rem 1.5rem;

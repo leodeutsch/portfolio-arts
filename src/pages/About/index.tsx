@@ -36,6 +36,14 @@ export const About: React.FC = () => {
         <S.Section>
           <S.SectionTitle>{t("about.exhibitions")}</S.SectionTitle>
           <S.SectionContent>
+            {
+              "2010 - ART GALLERY BRAZIL - Publicação em pintura no livro: FLORES, NATUREZA MORTA E PAISAGENS BRASILEIRAS"
+            }
+            <br />
+            {
+              "2013 - CAPA da Revista CADERNOS PAGU - UNICAMP. (40), janeiro – junho 2013"
+            }
+            <br />
             {"2018 - Tribunal de Justiça do Estado da Bahia – Salvador/Ba"}
             <br />
             {"2018 - Assembléia Legislativa do Estado da Bahia"}
@@ -55,39 +63,7 @@ export const About: React.FC = () => {
             {"2025 - Tribunal de Justiça do Estado da Bahia -Salvador"}
           </S.SectionContent>
         </S.Section>
-
-        <S.Section>
-          <S.SectionTitle>{t("about.institucional")}</S.SectionTitle>
-          <S.SectionContent>
-            {
-              "2010 - ART GALLERY BRAZIL - Publicação em pintura no livro: FLORES, NATUREZA MORTA E PAISAGENS BRASILEIRAS"
-            }
-            <br />
-            {
-              "2013 - CAPA da Revista CADERNOS PAGU - UNICAMP. (40), janeiro – junho 2013"
-            }
-          </S.SectionContent>
-        </S.Section>
       </S.ContentSection>
-
-      <S.ContactSection>
-        <S.PortfolioSection>
-          <S.PortfolioButton
-            href="https://drive.google.com/seu-link-aqui"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {t("about.viewSloopsPortfolio")}
-          </S.PortfolioButton>
-          <S.PortfolioButton
-            href="https://drive.google.com/seu-link-aqui"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {t("about.viewBlackWomenPortfolio")}
-          </S.PortfolioButton>
-        </S.PortfolioSection>
-      </S.ContactSection>
 
       <S.ContactSection>
         <S.ContactTitle to="/contact">{t("about.getInTouch")}</S.ContactTitle>

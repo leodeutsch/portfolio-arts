@@ -28,7 +28,7 @@ export interface Translation {
     biography: string;
     biographyText: string;
     exhibitions: string;
-    institucional: string;
+    awards: string;
     visualArtist: string;
     basedIn: string;
     artistJourney: string;
@@ -36,8 +36,6 @@ export interface Translation {
     creativeProcessDescription: string;
     getInTouch: string;
     email: string;
-    viewBlackWomenPortfolio: string;
-    viewSloopsPortfolio: string;
     allRightsReserved: string;
   };
   contact: {
