@@ -10,126 +10,144 @@
         "title": "Flor de Algodão I",
         "serie": "Forma e Relevo",
         "imageUrl": "forma-e-relevo/flor-do-algodao-1.jpg",
-        "thumbnailUrl": "forma-e-relevo/flor-do-algodao-1.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "forma-e-relevo/flor-do-algodao-1.jpg?tr=w-800,h-800",
+        "aspectRatio": "0.99"
       },
       {
         "id": "1-2",
         "title": "Flor de Algodão II",
         "serie": "Forma e Relevo",
         "imageUrl": "forma-e-relevo/flor-do-algodao-2.jpg",
-        "thumbnailUrl": "forma-e-relevo/flor-do-algodao-2.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "forma-e-relevo/flor-do-algodao-2.jpg?tr=w-800,h-800",
+        "aspectRatio": "0.97"
       },
       {
         "id": "1-3",
         "title": "Sussurros em Pétalas",
         "serie": "Forma e Relevo",
         "imageUrl": "forma-e-relevo/sussurros-em-petalas.jpg",
-        "thumbnailUrl": "forma-e-relevo/sussurros-em-petalas.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "forma-e-relevo/sussurros-em-petalas.jpg?tr=w-800,h-800",
+        "aspectRatio": "1"
       },
       {
         "id": "1-4",
         "title": "Silhueta Floral",
         "serie": "Forma e Relevo",
         "imageUrl": "forma-e-relevo/silhueta-floral.jpg",
-        "thumbnailUrl": "forma-e-relevo/silhueta-floral.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "forma-e-relevo/silhueta-floral.jpg?tr=w-800,h-800",
+        "aspectRatio": "0.98"
       },
       {
         "id": "1-5",
         "title": "Enigmático",
         "serie": "Forma e Relevo",
         "imageUrl": "forma-e-relevo/enigmatico.jpg",
-        "thumbnailUrl": "forma-e-relevo/enigmatico.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "forma-e-relevo/enigmatico.jpg?tr=w-800,h-800",
+        "aspectRatio": "1"
       },
       {
         "id": "1-6",
         "title": "Fragmentos Sinuosos",
         "serie": "Forma e Relevo",
         "imageUrl": "forma-e-relevo/fragmentos-sinuosos.jpg",
-        "thumbnailUrl": "forma-e-relevo/fragmentos-sinuosos.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "forma-e-relevo/fragmentos-sinuosos.jpg?tr=w-800,h-800",
+        "aspectRatio": "0.99"
       },
       {
         "id": "1-7",
         "title": "Jardim Pulsante",
         "serie": "Forma e Relevo",
         "imageUrl": "forma-e-relevo/jardim-pulsante.jpg",
-        "thumbnailUrl": "forma-e-relevo/jardim-pulsante.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "forma-e-relevo/jardim-pulsante.jpg?tr=w-800,h-800",
+        "aspectRatio": "1"
       },
       {
         "id": "1-8",
         "title": "Primavera",
         "serie": "Forma e Relevo",
         "imageUrl": "forma-e-relevo/primavera.jpg",
-        "thumbnailUrl": "forma-e-relevo/primavera.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "forma-e-relevo/primavera.jpg?tr=w-800,h-800",
+        "aspectRatio": "0.99"
       },
       {
         "id": "1-9",
         "title": "Plante Seu Jardim",
         "serie": "Forma e Relevo",
         "imageUrl": "forma-e-relevo/plante-seu-jardim.jpg",
-        "thumbnailUrl": "forma-e-relevo/plante-seu-jardim.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "forma-e-relevo/plante-seu-jardim.jpg?tr=w-800,h-800",
+        "aspectRatio": "1"
       },
       {
         "id": "1-10",
         "title": "Decore sua Alma",
         "serie": "Forma e Relevo",
         "imageUrl": "forma-e-relevo/decore-sua-alma.jpg",
-        "thumbnailUrl": "forma-e-relevo/decore-sua-alma.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "forma-e-relevo/decore-sua-alma.jpg?tr=w-800,h-800",
+        "aspectRatio": "0.98"
       },
       {
         "id": "1-11",
         "title": "Metáfora",
         "serie": "Forma e Relevo",
         "imageUrl": "forma-e-relevo/metafora.jpg",
-        "thumbnailUrl": "forma-e-relevo/metafora.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "forma-e-relevo/metafora.jpg?tr=w-800,h-800",
+        "aspectRatio": "1"
       },
       {
         "id": "1-12",
         "title": "Jardim em Camadas",
         "serie": "Forma e Relevo",
         "imageUrl": "forma-e-relevo/jardim-em-camadas.jpg",
-        "thumbnailUrl": "forma-e-relevo/jardim-em-camadas.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "forma-e-relevo/jardim-em-camadas.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.01"
       },
       {
         "id": "1-13",
         "title": "Abstrações",
         "serie": "Forma e Relevo",
         "imageUrl": "forma-e-relevo/abstracoes.jpg",
-        "thumbnailUrl": "forma-e-relevo/abstracoes.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "forma-e-relevo/abstracoes.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.24"
       },
       {
         "id": "1-14",
         "title": "Silêncio Fluido",
         "serie": "Forma e Relevo",
         "imageUrl": "forma-e-relevo/silencio-fluido.jpg",
-        "thumbnailUrl": "forma-e-relevo/silencio-fluido.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "forma-e-relevo/silencio-fluido.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.17"
       },
       {
         "id": "1-15",
         "title": "Jardim Barroco",
         "serie": "Forma e Relevo",
         "imageUrl": "forma-e-relevo/jardim-barroco.jpg",
-        "thumbnailUrl": "forma-e-relevo/jardim-barroco.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "forma-e-relevo/jardim-barroco.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.14"
       },
       {
         "id": "1-16",
         "title": "Silêncio",
         "serie": "Forma e Relevo",
         "imageUrl": "forma-e-relevo/silencio.jpg",
-        "thumbnailUrl": "forma-e-relevo/silencio.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "forma-e-relevo/silencio.jpg?tr=w-800,h-800",
+        "aspectRatio": "0.99"
       },
       {
         "id": "1-17",
         "title": "Formas Inquietas I",
         "serie": "Forma e Relevo",
         "imageUrl": "forma-e-relevo/formas-inquietas-1.jpg",
-        "thumbnailUrl": "forma-e-relevo/formas-inquietas-1.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "forma-e-relevo/formas-inquietas-1.jpg?tr=w-800,h-800",
+        "aspectRatio": "0.99"
       },
       {
         "id": "1-18",
         "title": "Formas Inquietas II",
         "serie": "Forma e Relevo",
         "imageUrl": "forma-e-relevo/formas-inquietas-2.jpg",
-        "thumbnailUrl": "forma-e-relevo/formas-inquietas-2.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "forma-e-relevo/formas-inquietas-2.jpg?tr=w-800,h-800",
+        "aspectRatio": "0.98"
       }
     ]
   },
@@ -144,56 +162,64 @@
         "title": "Bahia de Todos os Tempos",
         "serie": "Saveiros",
         "imageUrl": "saveiros/bahia-de-todos-os-tempos.jpg",
-        "thumbnailUrl": "saveiros/bahia-de-todos-os-tempos.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "saveiros/bahia-de-todos-os-tempos.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.32"
       },
       {
         "id": "2-2",
         "title": "Chegada Silenciosa",
         "serie": "Saveiros",
         "imageUrl": "saveiros/chegada-silenciosa.jpg",
-        "thumbnailUrl": "saveiros/chegada-silenciosa.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "saveiros/chegada-silenciosa.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.29"
       },
       {
         "id": "2-4",
         "title": "Dança das Velas",
         "serie": "Saveiros",
         "imageUrl": "saveiros/danca-das-velas.jpg",
-        "thumbnailUrl": "saveiros/danca-das-velas.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "saveiros/danca-das-velas.jpg?tr=w-800,h-800",
+        "aspectRatio": "0.71"
       },
       {
         "id": "2-5",
         "title": "Linha do Horizonte em Movimento",
         "serie": "Saveiros",
         "imageUrl": "saveiros/linha-do-horizonte-em-movimento.jpg",
-        "thumbnailUrl": "saveiros/linha-do-horizonte-em-movimento.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "saveiros/linha-do-horizonte-em-movimento.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.34"
       },
       {
         "id": "2-6",
         "title": "Regata de Saveiros XII",
         "serie": "Saveiros",
         "imageUrl": "saveiros/regata-de-saveiros-XII.jpg",
-        "thumbnailUrl": "saveiros/regata-de-saveiros-XII.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "saveiros/regata-de-saveiros-XII.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.29"
       },
       {
         "id": "2-7",
         "title": "Saveiros na Baía",
         "serie": "Saveiros",
         "imageUrl": "saveiros/saveiros-na-baia.jpg",
-        "thumbnailUrl": "saveiros/saveiros-na-baia.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "saveiros/saveiros-na-baia.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.49"
       },
       {
         "id": "2-8",
         "title": "Saveiros na Rampa do Mercado",
         "serie": "Saveiros",
         "imageUrl": "saveiros/saveiros-na-rampa-do-mercado.jpg",
-        "thumbnailUrl": "saveiros/saveiros-na-rampa-do-mercado.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "saveiros/saveiros-na-rampa-do-mercado.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.50"
       },
       {
         "id": "2-9",
         "title": "Velas ao Vento",
         "serie": "Saveiros",
         "imageUrl": "saveiros/velas-ao-vento.jpg",
-        "thumbnailUrl": "saveiros/velas-ao-vento.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "saveiros/velas-ao-vento.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.27"
       }
     ]
   },
@@ -208,91 +234,104 @@
         "title": "Abstrato Geométrico I",
         "serie": "Abstratos",
         "imageUrl": "abstratos/abstrato-geometrico-I.jpg",
-        "thumbnailUrl": "abstratos/abstrato-geometrico-I.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "abstratos/abstrato-geometrico-I.jpg?tr=w-800,h-800",
+        "aspectRatio": "0.74"
       },
       {
         "id": "3-2",
         "title": "Abstrato Geométrico II",
         "serie": "Abstratos",
         "imageUrl": "abstratos/abstrato-geometrico-II.jpg",
-        "thumbnailUrl": "abstratos/abstrato-geometrico-II.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "abstratos/abstrato-geometrico-II.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.32"
       },
       {
         "id": "3-3",
         "title": "Abstrato Geométrico III",
         "serie": "Abstratos",
         "imageUrl": "abstratos/abstrato-geometrico-III.jpg",
-        "thumbnailUrl": "abstratos/abstrato-geometrico-III.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "abstratos/abstrato-geometrico-III.jpg?tr=w-800,h-800",
+        "aspectRatio": "0.82"
       },
       {
         "id": "3-4",
         "title": "Abstrato Geométrico VI",
         "serie": "Abstratos",
         "imageUrl": "abstratos/abstrato-geometrico-VI.jpg",
-        "thumbnailUrl": "abstratos/abstrato-geometrico-VI.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "abstratos/abstrato-geometrico-VI.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.27"
       },
       {
         "id": "3-5",
         "title": "Abstrato Geométrico VII",
         "serie": "Abstratos",
         "imageUrl": "abstratos/abstrato-geometrico-VII.jpg",
-        "thumbnailUrl": "abstratos/abstrato-geometrico-VII.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "abstratos/abstrato-geometrico-VII.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.26"
       },
       {
         "id": "3-6",
         "title": "Abstrato Geométrico VIII",
         "serie": "Abstratos",
         "imageUrl": "abstratos/abstrato-geometrico-VIII.jpg",
-        "thumbnailUrl": "abstratos/abstrato-geometrico-VIII.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "abstratos/abstrato-geometrico-VIII.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.44"
       },
       {
         "id": "3-7",
         "title": "Abstrato Gestual XIX",
         "serie": "Abstratos",
         "imageUrl": "abstratos/abstrato-gestual-XIX.jpg",
-        "thumbnailUrl": "abstratos/abstrato-gestual-XIX.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "abstratos/abstrato-gestual-XIX.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.53"
       },
       {
         "id": "3-8",
         "title": "Abstrato Gestual XVII",
         "serie": "Abstratos",
         "imageUrl": "abstratos/abstrato-gestual-XVII.jpg",
-        "thumbnailUrl": "abstratos/abstrato-gestual-XVII.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "abstratos/abstrato-gestual-XVII.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.68"
       },
       {
         "id": "3-9",
         "title": "Abstrato Gestual XVIII",
         "serie": "Abstratos",
         "imageUrl": "abstratos/abstrato-gestual-XVIII.jpg",
-        "thumbnailUrl": "abstratos/abstrato-gestual-XVIII.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "abstratos/abstrato-gestual-XVIII.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.34"
       },
       {
         "id": "3-10",
         "title": "Abstrato Gestual XX",
         "serie": "Abstratos",
         "imageUrl": "abstratos/abstrato-gestual-XX.jpg",
-        "thumbnailUrl": "abstratos/abstrato-gestual-XX.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "abstratos/abstrato-gestual-XX.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.51"
       },
       {
         "id": "3-11",
         "title": "Abstrato Gestual XXI",
         "serie": "Abstratos",
         "imageUrl": "abstratos/abstrato-gestual-XXI.jpg",
-        "thumbnailUrl": "abstratos/abstrato-gestual-XXI.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "abstratos/abstrato-gestual-XXI.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.28"
       },
       {
         "id": "3-12",
         "title": "Abstrato Gestual XXII",
         "serie": "Abstratos",
         "imageUrl": "abstratos/abstrato-gestual-XXII.jpg",
-        "thumbnailUrl": "abstratos/abstrato-gestual-XXII.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "abstratos/abstrato-gestual-XXII.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.31"
       },
       {
         "id": "3-13",
         "title": "Abstrato Gestual XXIII",
         "serie": "Abstratos",
         "imageUrl": "abstratos/abstrato-gestual-XXIII.jpg",
-        "thumbnailUrl": "abstratos/abstrato-gestual-XXIII.jpg?tr=w-800,h-800"
+        "thumbnailUrl": "abstratos/abstrato-gestual-XXIII.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.32"
       }
     ]
   }
