@@ -7,6 +7,7 @@ import * as S from "./styles";
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  const [isTransparent, setIsTransparent] = useState(false);
   const lastScrollY = useRef(0);
   const location = useLocation();
   const { language, toggleLanguage, t } = useLanguage();
@@ -25,6 +26,16 @@ export const Header: React.FC = () => {
     return location.pathname.startsWith(path);
   };
 
+  const isHomePage = location.pathname === "/";
+
+  useEffect(() => {
+    if (isHomePage) {
+      setIsTransparent(true);
+    } else {
+      setIsTransparent(false);
+    }
+  }, [isHomePage]);
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -33,6 +44,15 @@ export const Header: React.FC = () => {
       // Closes menu on scroll on mobile
       if (isMenuOpen) {
         setIsMenuOpen(false);
+      }
+
+      // Handle transparency on home page
+      if (isHomePage) {
+        const scrollProgress = Math.min(
+          currentScrollY / (window.innerHeight * 0.5),
+          1
+        );
+        setIsTransparent(scrollProgress < 1);
       }
 
       if (currentScrollY > lastScrollY.current && currentScrollY > threshold) {
@@ -49,7 +69,7 @@ export const Header: React.FC = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, isHomePage]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -73,10 +93,10 @@ export const Header: React.FC = () => {
   }, [isMenuOpen]);
 
   return (
-    <S.HeaderWrapper visible={isVisible}>
+    <S.HeaderWrapper visible={isVisible} $transparent={isTransparent}>
       <S.HeaderContainer>
         <S.Logo to="/">
-          <S.LogoText>Rosa Rocha</S.LogoText>
+          <S.LogoText $transparent={isTransparent}>Rosa Rocha</S.LogoText>
         </S.Logo>
 
         <S.MenuButton
@@ -84,11 +104,12 @@ export const Header: React.FC = () => {
           aria-label="Toggle menu"
           onClick={() => setIsMenuOpen((prev) => !prev)}
           isOpen={isMenuOpen}
+          $transparent={isTransparent}
         >
           {!isMenuOpen ? <Menu size={32} /> : <X size={32} />}
         </S.MenuButton>
 
-        <S.Nav ref={navRef} isOpen={isMenuOpen}>
+        <S.Nav ref={navRef} isOpen={isMenuOpen} $transparent={isTransparent}>
           <S.NavList>
             {navItems.map((item) => (
               <S.NavItem key={item.path}>
@@ -96,6 +117,7 @@ export const Header: React.FC = () => {
                   to={item.path}
                   active={isPathActive(item.path)}
                   onClick={() => setIsMenuOpen(false)}
+                  $transparent={isTransparent}
                 >
                   {item.label}
                 </S.NavLink>
@@ -104,7 +126,7 @@ export const Header: React.FC = () => {
           </S.NavList>
         </S.Nav>
 
-        <S.LanguageButton onClick={toggleLanguage}>
+        <S.LanguageButton onClick={toggleLanguage} $transparent={isTransparent}>
           {language === "pt" ? "EN" : "PT"}
         </S.LanguageButton>
       </S.HeaderContainer>

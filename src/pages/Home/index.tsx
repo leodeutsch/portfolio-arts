@@ -51,6 +51,7 @@ export const Home: React.FC = () => {
       <HeroSlider
         artworks={sliderArtworks}
         serieName={sliderArtworks[0]?.serie || ""}
+        theaterMode={true}
       />
       <FeaturedArtworks artworks={featuredArtworks} />
     </S.HomeContainer>
