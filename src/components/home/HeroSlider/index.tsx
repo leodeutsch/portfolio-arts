@@ -142,7 +142,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
             $theaterMode={theaterMode}
             $scrollProgress={scrollProgress}
             style={{
-              backgroundImage: `url(${getImageKitUrl(artwork.imageUrl)})`,
+              backgroundImage: `url(${getImageKitUrl(artwork.imageUrl)}?tr=w-${isMobile ? 768 : 1920})`,
             }}
           />
         ))}
