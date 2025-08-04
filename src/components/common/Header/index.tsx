@@ -7,6 +7,8 @@ import * as S from "./styles";
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  const [isTransparent, setIsTransparent] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const lastScrollY = useRef(0);
   const location = useLocation();
   const { language, toggleLanguage, t } = useLanguage();
@@ -25,6 +27,46 @@ export const Header: React.FC = () => {
     return location.pathname.startsWith(path);
   };
 
+  const isHomePage = location.pathname === "/";
+
+  // Check if device is mobile/tablet
+  useEffect(() => {
+    const checkIsMobile = () => {
+      const isMobileDevice = window.matchMedia("(max-width: 768px)").matches;
+      setIsMobile(isMobileDevice);
+      return isMobileDevice;
+    };
+
+    const isMobileDevice = checkIsMobile();
+
+    // Set initial transparency only on desktop and home page
+    if (isHomePage && !isMobileDevice) {
+      setIsTransparent(true);
+    } else {
+      setIsTransparent(false);
+    }
+
+    const handleResize = () => {
+      const isMobileDevice = checkIsMobile();
+
+      // Update transparency on resize
+      if (isHomePage && !isMobileDevice) {
+        // Check current scroll position
+        const currentScrollY = window.scrollY;
+        const scrollProgress = Math.min(
+          currentScrollY / (window.innerHeight * 0.5),
+          1
+        );
+        setIsTransparent(scrollProgress < 1);
+      } else {
+        setIsTransparent(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isHomePage]);
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -35,6 +77,16 @@ export const Header: React.FC = () => {
         setIsMenuOpen(false);
       }
 
+      // Handle transparency on home page (only on desktop)
+      if (isHomePage && !isMobile) {
+        const scrollProgress = Math.min(
+          currentScrollY / (window.innerHeight * 0.5),
+          1
+        );
+        setIsTransparent(scrollProgress < 1);
+      }
+
+      // Header visibility on scroll
       if (currentScrollY > lastScrollY.current && currentScrollY > threshold) {
         setIsVisible(false);
       } else {
@@ -49,7 +101,7 @@ export const Header: React.FC = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, isHomePage, isMobile]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -73,10 +125,10 @@ export const Header: React.FC = () => {
   }, [isMenuOpen]);
 
   return (
-    <S.HeaderWrapper visible={isVisible}>
+    <S.HeaderWrapper visible={isVisible} $transparent={isTransparent}>
       <S.HeaderContainer>
         <S.Logo to="/">
-          <S.LogoText>Rosa Rocha</S.LogoText>
+          <S.LogoText $transparent={isTransparent}>Rosa Rocha</S.LogoText>
         </S.Logo>
 
         <S.MenuButton
@@ -84,11 +136,12 @@ export const Header: React.FC = () => {
           aria-label="Toggle menu"
           onClick={() => setIsMenuOpen((prev) => !prev)}
           isOpen={isMenuOpen}
+          $transparent={isTransparent}
         >
           {!isMenuOpen ? <Menu size={32} /> : <X size={32} />}
         </S.MenuButton>
 
-        <S.Nav ref={navRef} isOpen={isMenuOpen}>
+        <S.Nav ref={navRef} isOpen={isMenuOpen} $transparent={isTransparent}>
           <S.NavList>
             {navItems.map((item) => (
               <S.NavItem key={item.path}>
@@ -96,6 +149,7 @@ export const Header: React.FC = () => {
                   to={item.path}
                   active={isPathActive(item.path)}
                   onClick={() => setIsMenuOpen(false)}
+                  $transparent={isTransparent}
                 >
                   {item.label}
                 </S.NavLink>
@@ -104,7 +158,7 @@ export const Header: React.FC = () => {
           </S.NavList>
         </S.Nav>
 
-        <S.LanguageButton onClick={toggleLanguage}>
+        <S.LanguageButton onClick={toggleLanguage} $transparent={isTransparent}>
           {language === "pt" ? "EN" : "PT"}
         </S.LanguageButton>
       </S.HeaderContainer>

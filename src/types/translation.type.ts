@@ -59,5 +59,6 @@ export interface Translation {
     formRelief?: string;
     sloops?: string;
     abstracts?: string;
+    blackWomen?: string;
   };
 }

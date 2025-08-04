@@ -64,7 +64,11 @@ export const SerieDetail: React.FC = () => {
             {getSerieDescription(serie.id, t)}
           </S.SerieDescription>
           <S.ArtworkCount>
+<<<<<<< HEAD
             {t("series.artworksCount") + " " + serieLength}
+=======
+            {t("series.artworksCount") + " " + serie?.artworks.length}
+>>>>>>> dev
           </S.ArtworkCount>
         </S.SerieInfo>
       </S.Header>

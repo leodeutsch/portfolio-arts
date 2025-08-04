@@ -65,6 +65,25 @@ export const About: React.FC = () => {
         </S.Section>
       </S.ContentSection>
 
+      {/* <S.ContactSection>
+        <S.PortfolioSection>
+          <S.PortfolioButton
+            href="https://drive.google.com/seu-link-aqui"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t("about.viewSloopsPortfolio")}
+          </S.PortfolioButton>
+          <S.PortfolioButton
+            href="https://drive.google.com/seu-link-aqui"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t("about.viewBlackWomenPortfolio")}
+          </S.PortfolioButton>
+        </S.PortfolioSection>
+      </S.ContactSection> */}
+
       <S.ContactSection>
         <S.ContactTitle to="/contact">{t("about.getInTouch")}</S.ContactTitle>
       </S.ContactSection>

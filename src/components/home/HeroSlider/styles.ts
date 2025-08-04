@@ -1,27 +1,39 @@
-import styled from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { media } from "../../../styles/breakpoints";
 
-export const SliderContainer = styled.section`
+export const SliderContainer = styled.section<{ $theaterMode?: boolean }>`
   position: relative;
   width: 100%;
-  height: 82vh;
+  height: ${({ $theaterMode }) => ($theaterMode ? "100vh" : "82vh")};
   min-height: 400px;
   overflow: hidden;
-  margin-top: ${({ theme }) => theme.sizes.headerHeight};
+  margin-top: ${({ theme, $theaterMode }) =>
+    $theaterMode ? "0" : theme.sizes.headerHeight};
 
   ${media.tablet} {
-    height: 50vh;
+    height: ${({ $theaterMode }) => ($theaterMode ? "100vh" : "50vh")};
     min-height: 300px;
   }
 `;
 
-export const SliderWrapper = styled.div`
+export const SliderWrapper = styled.div<{
+  $theaterMode?: boolean;
+  $scrollProgress?: number;
+}>`
   position: relative;
   width: 100%;
   height: 100%;
+  transform: ${({ $theaterMode, $scrollProgress = 0 }) =>
+    $theaterMode ? `scale(${1.2 - 0.2 * $scrollProgress})` : "scale(1)"};
+  transition: ${({ $theaterMode }) =>
+    $theaterMode ? "none" : "transform 0.3s ease"};
 `;
 
-export const Slide = styled.div<{ active: boolean }>`
+export const Slide = styled.div<{
+  active: boolean;
+  $theaterMode?: boolean;
+  $scrollProgress?: number;
+}>`
   position: absolute;
   top: 0;
   left: 0;
@@ -47,7 +59,7 @@ export const Slide = styled.div<{ active: boolean }>`
   }
 `;
 
-export const SliderContent = styled.div`
+export const SliderContent = styled.div<{ $scrollProgress?: number }>`
   position: absolute;
   bottom: 3rem;
   left: 50%;
@@ -55,6 +67,8 @@ export const SliderContent = styled.div`
   text-align: center;
   color: white;
   z-index: 2;
+  opacity: ${({ $scrollProgress = 1 }) => $scrollProgress};
+  transition: opacity 0.3s ease;
 
   ${media.tablet} {
     bottom: 2rem;
@@ -84,17 +98,68 @@ export const Indicators = styled.div`
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 0.5rem;
+  gap: 0.75rem;
   z-index: 3;
 `;
 
-export const Indicator = styled.button<{ active: boolean }>`
-  width: ${({ active }) => (active ? "24px" : "8px")};
+const loadingAnimation = keyframes`
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+`;
+
+export const Indicator = styled.button<{
+  active: boolean;
+  $animationKey?: number;
+}>`
+  position: relative;
+  width: ${({ active }) => (active ? "32px" : "8px")};
   height: 8px;
   border-radius: 4px;
   background-color: ${({ active }) =>
-    active ? "#fff" : "rgba(255, 255, 255, 0.5)"};
+    active ? "rgba(255, 255, 255, 0.3)" : "rgba(255, 255, 255, 0.7)"};
   transition: all ${({ theme }) => theme.transitions.default};
+  overflow: hidden;
+  cursor: pointer;
+
+  ${({ active }) =>
+    active &&
+    css`
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0%;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 4px;
+        animation: ${loadingAnimation} 5s linear;
+      }
+    `}
+
+  &:hover {
+    background-color: ${({ active }) =>
+      active ? "rgba(255, 255, 255, 0.5)" : "rgba(255, 255, 255, 0.7)"};
+    transform: scale(1.1);
+  }
+
+  ${media.tablet} {
+    width: ${({ active }) => (active ? "28px" : "6px")};
+    height: 6px;
+    border-radius: 3px;
+
+    ${({ active }) =>
+      active &&
+      css`
+        &::after {
+          border-radius: 3px;
+        }
+      `}
+  }
 `;
 
 export const ArrowButton = styled.button<{
@@ -106,6 +171,8 @@ export const ArrowButton = styled.button<{
   pointer-events: ${({ $hovered }) => ($hovered ? "auto" : "none")};
   position: absolute;
   top: 50%;
+  width: 50px;
+  height: 50px;
   ${({ $left }) => $left && "left: 2rem;"}
   ${({ $right }) => $right && "right: 2rem;"}
   cursor: pointer;
@@ -125,6 +192,6 @@ export const ArrowButton = styled.button<{
   }
 
   &:hover {
-    transform: scale(1.2);
+    transform: scale(1.4);
   }
 `;

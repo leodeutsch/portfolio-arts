@@ -9,6 +9,8 @@ export const getSerieDescription = (
       return t("seriesDetails.sloops");
     case "3":
       return t("seriesDetails.abstracts");
+    case "4":
+      return t("seriesDetails.blackWomen");
     default:
       return "";
   }

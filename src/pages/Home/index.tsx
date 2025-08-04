@@ -7,6 +7,22 @@ import * as S from "./styles";
 export const Home: React.FC = () => {
   const [artworks, setArtworks] = useState<Artwork[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      return window.matchMedia("(max-width: 768px)").matches;
+    };
+
+    setIsMobile(checkIsMobile());
+
+    const handleResize = () => {
+      setIsMobile(checkIsMobile());
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     fetch("/series.json")
@@ -51,6 +67,7 @@ export const Home: React.FC = () => {
       <HeroSlider
         artworks={sliderArtworks}
         serieName={sliderArtworks[0]?.serie || ""}
+        theaterMode={!isMobile} // Only enable theater mode on desktop
       />
       <FeaturedArtworks artworks={featuredArtworks} />
     </S.HomeContainer>

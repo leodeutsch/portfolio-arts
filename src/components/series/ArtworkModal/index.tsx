@@ -2,7 +2,7 @@ import { ChevronLeft, ChevronRight, CircleX } from "lucide-react";
 import React, { useCallback, useEffect, useState } from "react";
 import { useLanguage } from "../../../hooks/useLanguage";
 import type { Artwork } from "../../../types/";
-import { getImageKitUrl } from "../../../utils/imgkit";
+import { getImageKitUrl, getSrcSet } from "../../../utils/imgkit";
 import * as S from "./styles";
 
 interface ArtworkModalProps {
@@ -98,6 +98,8 @@ export const ArtworkModal: React.FC<ArtworkModalProps> = ({
             <S.LoadingMessage>{t("common.loading")}</S.LoadingMessage>
           )}
           <img
+            srcSet={getSrcSet(artwork.imageUrl)}
+            sizes="(max-width: 768px) 100vw, 80vw"
             src={getImageKitUrl(artwork.imageUrl)}
             alt={artwork.title}
             onLoad={handleImageLoad}
