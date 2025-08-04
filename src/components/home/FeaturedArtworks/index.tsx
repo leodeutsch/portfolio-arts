@@ -41,6 +41,7 @@ export const FeaturedArtworks: React.FC<FeaturedArtworksProps> = ({
                 <img
                   src={getImageKitUrl(artwork.thumbnailUrl)}
                   alt={artwork.title}
+                  loading="lazy"
                 />
                 <S.ArtworkOverlay>
                   <S.ViewButton>{t("common.view")}</S.ViewButton>

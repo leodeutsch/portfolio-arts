@@ -1,13 +1,40 @@
 import styled from "styled-components";
 
-export const Card = styled.article`
-  cursor: pointer;
-  transition: transform ${({ theme }) => theme.transitions.default};
-  margin-bottom: 5vh;
+export const Card = styled.div`
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: ${({ theme }) => theme.shadows.small};
+  transition: all ${({ theme }) => theme.transitions.default};
+  background-color: ${({ theme }) => theme.colors.background};
 
   &:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
+    box-shadow: ${({ theme }) => theme.shadows.large};
   }
+`;
+
+export const CoverImage = styled.img`
+  width: 100%;
+  height: auto; // Changed from fixed height to auto
+  object-fit: cover;
+  display: block;
+  background-color: ${({ theme }) => theme.colors.background[200]};
+`;
+
+export const SerieInfo = styled.div`
+  padding: 1rem;
+`;
+
+export const SerieName = styled.h3`
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: ${({ theme }) => theme.colors.secondary};
+  margin-bottom: 0.5rem;
+`;
+
+export const ArtworkCount = styled.p`
+  font-size: 0.9rem;
+  color: ${({ theme }) => theme.colors.text};
 `;
 
 export const ImageContainer = styled.div`

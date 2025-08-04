@@ -7,6 +7,7 @@ export interface Artwork {
   description?: string;
   year?: number;
   featured?: boolean;
+  aspectRatio?: number;
 }
 
 export interface Serie {

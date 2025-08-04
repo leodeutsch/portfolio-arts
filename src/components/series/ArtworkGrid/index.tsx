@@ -46,6 +46,7 @@ export const ArtworkGrid: React.FC<ArtworkGridProps> = ({ artworks }) => {
               <img
                 src={getImageKitUrl(artwork.thumbnailUrl)}
                 alt={artwork.title}
+                loading={index < 4 ? "eager" : "lazy"}
               />
               <S.ArtworkOverlay>
                 <S.ArtworkTitle>{artwork.title}</S.ArtworkTitle>
