@@ -8,6 +8,7 @@ export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [isTransparent, setIsTransparent] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const lastScrollY = useRef(0);
   const location = useLocation();
   const { language, toggleLanguage, t } = useLanguage();
@@ -28,12 +29,42 @@ export const Header: React.FC = () => {
 
   const isHomePage = location.pathname === "/";
 
+  // Check if device is mobile/tablet
   useEffect(() => {
-    if (isHomePage) {
+    const checkIsMobile = () => {
+      const isMobileDevice = window.matchMedia("(max-width: 768px)").matches;
+      setIsMobile(isMobileDevice);
+      return isMobileDevice;
+    };
+
+    const isMobileDevice = checkIsMobile();
+
+    // Set initial transparency only on desktop and home page
+    if (isHomePage && !isMobileDevice) {
       setIsTransparent(true);
     } else {
       setIsTransparent(false);
     }
+
+    const handleResize = () => {
+      const isMobileDevice = checkIsMobile();
+
+      // Update transparency on resize
+      if (isHomePage && !isMobileDevice) {
+        // Check current scroll position
+        const currentScrollY = window.scrollY;
+        const scrollProgress = Math.min(
+          currentScrollY / (window.innerHeight * 0.5),
+          1
+        );
+        setIsTransparent(scrollProgress < 1);
+      } else {
+        setIsTransparent(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, [isHomePage]);
 
   useEffect(() => {
@@ -46,8 +77,8 @@ export const Header: React.FC = () => {
         setIsMenuOpen(false);
       }
 
-      // Handle transparency on home page
-      if (isHomePage) {
+      // Handle transparency on home page (only on desktop)
+      if (isHomePage && !isMobile) {
         const scrollProgress = Math.min(
           currentScrollY / (window.innerHeight * 0.5),
           1
@@ -55,6 +86,7 @@ export const Header: React.FC = () => {
         setIsTransparent(scrollProgress < 1);
       }
 
+      // Header visibility on scroll
       if (currentScrollY > lastScrollY.current && currentScrollY > threshold) {
         setIsVisible(false);
       } else {
@@ -69,7 +101,7 @@ export const Header: React.FC = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isMenuOpen, isHomePage]);
+  }, [isMenuOpen, isHomePage, isMobile]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

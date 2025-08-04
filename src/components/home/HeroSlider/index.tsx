@@ -27,6 +27,9 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
   const [animationKey, setAnimationKey] = useState(Date.now());
   const { t } = useLanguage();
 
+  // Disable theater mode on mobile/tablet
+  const effectiveTheaterMode = theaterMode && !isMobile;
+
   // Reset animation whenever currentIndex changes
   useEffect(() => {
     setAnimationKey(Date.now());
@@ -47,7 +50,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
   }, []);
 
   useEffect(() => {
-    if (!theaterMode) return;
+    if (!effectiveTheaterMode) return;
 
     const handleWheel = (e: WheelEvent) => {
       if (isScrollTransitionComplete) return;
@@ -69,7 +72,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
     return () => {
       window.removeEventListener("wheel", handleWheel);
     };
-  }, [theaterMode, scrollProgress, isScrollTransitionComplete]);
+  }, [effectiveTheaterMode, scrollProgress, isScrollTransitionComplete]);
 
   const handleClickNext = () => {
     if (!isScrollTransitionComplete) return;
@@ -106,14 +109,14 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
     return () => clearInterval(interval);
   }, [artworks.length, isScrollTransitionComplete, currentIndex]);
 
-  const showControls = !theaterMode || isScrollTransitionComplete;
+  const showControls = !effectiveTheaterMode || isScrollTransitionComplete;
 
   return (
-    <S.SliderContainer $theaterMode={theaterMode}>
+    <S.SliderContainer $theaterMode={effectiveTheaterMode}>
       <S.SliderWrapper
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        $theaterMode={theaterMode}
+        $theaterMode={effectiveTheaterMode}
         $scrollProgress={scrollProgress}
       >
         {showControls && (
@@ -142,7 +145,9 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
             $theaterMode={theaterMode}
             $scrollProgress={scrollProgress}
             style={{
-              backgroundImage: `url(${getImageKitUrl(artwork.imageUrl)}?tr=w-${isMobile ? 768 : 1920})`,
+              backgroundImage: `url(${getImageKitUrl(artwork.imageUrl)}?tr=w-${
+                isMobile ? 768 : 1920
+              })`,
             }}
           />
         ))}
