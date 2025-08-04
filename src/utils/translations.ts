@@ -32,9 +32,9 @@ export const translations: Record<"pt" | "en", Translation> = {
       biography: "Biografia",
       biographyText: `Nasci em Gandu, situada na região cacaueira do Sul da Bahia. Ainda criança, tive os primeiros contatos com tintas e pincéis, guiada pelo olhar atento da professora Ismênia, uma estimada tia – cuja presença marcante na minha vida foi um farol e inspiração, desde o início da minha caminhada.
 Após concluir o curso de Letras, mergulhei no universo denso e fascinante dos escritores realistas – cujas temáticas marcadas por humanidade e crítica social, passaram a habitar o meu imaginário e hoje reverberam nas minhas obras.
-Mais tarde, real-izei o tão sonhado encontro com as Artes Plásticas, e na Pintura descobri a linguagem capaz de desnudar alma e revelar a minha visão de mundo. Por meio das cores e das formas, dou corpo à memória, ao tempo, ao aspecto cultural e à paisagem baiana a qual tanto me inspira.`,
+Mais tarde, realizei o tão sonhado encontro com as Artes Plásticas, e na Pintura descobri a linguagem capaz de desnudar alma e revelar a minha visão de mundo. Por meio das cores e das formas, dou corpo à memória, ao tempo, ao aspecto cultural e à paisagem baiana a qual tanto me inspira.`,
       exhibitions: "Algumas Exposições",
-      awards: "Prêmios",
+      awards: "Obras Institucionalizadas",
       visualArtist: "Artista Plástica",
       basedIn: "Reside em",
       artistJourney: "Trajetória Artística",
@@ -106,7 +106,7 @@ Minha arte se ancora na cultura baiana, mas não se limita a ela: ela é memóri
 After completing my degree in Literature, I immersed myself in the dense and fascinating universe of realist writers – whose themes, marked by humanity and social criticism, began to inhabit my imagination and today reverberate in my works.
 Later, I realized the long-awaited encounter with the Visual Arts, and in Painting I discovered the language capable of baring the soul and revealing my vision of the world.`,
       exhibitions: "Some Exhibitions",
-      awards: "Awards",
+      awards: "Institutionalized Works",
       visualArtist: "Fine Artist",
       basedIn: "Reside in",
       artistJourney: "Artistic Journey",
