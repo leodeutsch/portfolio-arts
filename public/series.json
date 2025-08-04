@@ -334,5 +334,109 @@
         "aspectRatio": "1.32"
       }
     ]
+  },
+  {
+    "id": "4",
+    "name": "Negras",
+    "description": "Uma série que celebra a beleza e a força das mulheres negras.",
+    "coverImage": "negras/heranca-tecida-com-arte.jpg?tr=w-800,h-800",
+    "artworks": [
+      {
+        "id": "4-1",
+        "title": "Alvorada",
+        "serie": "Negras",
+        "imageUrl": "negras/alvorada.jpg",
+        "thumbnailUrl": "negras/alvorada.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.00"
+      },
+      {
+        "id": "4-2",
+        "title": "Cabeça Feita I",
+        "serie": "Negras",
+        "imageUrl": "negras/cabeca-feita-I.jpg",
+        "thumbnailUrl": "negras/cabeca-feita-I.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.20"
+      },
+      {
+        "id": "4-3",
+        "title": "Corpo Ancestral",
+        "serie": "Negras",
+        "imageUrl": "negras/corpo-ancestral.jpeg",
+        "thumbnailUrl": "negras/corpo-ancestral.jpeg?tr=w-800,h-800",
+        "aspectRatio": "0.75"
+      },
+      {
+        "id": "4-4",
+        "title": "Doce Raiz",
+        "serie": "Negras",
+        "imageUrl": "negras/doce-raiz.jpg",
+        "thumbnailUrl": "negras/doce-raiz.jpg?tr=w-800,h-800",
+        "aspectRatio": "0.73"
+      },
+      {
+        "id": "4-5",
+        "title": "Herança Tecida Com Arte",
+        "serie": "Negras",
+        "imageUrl": "negras/heranca-tecida-com-arte.jpg",
+        "thumbnailUrl": "negras/heranca-tecida-com-arte.jpg?tr=w-800,h-800",
+        "aspectRatio": "0.75"
+      },
+      {
+        "id": "4-6",
+        "title": "Horizonte",
+        "serie": "Negras",
+        "imageUrl": "negras/horizonte.jpg",
+        "thumbnailUrl": "negras/horizonte.jpg?tr=w-800,h-800",
+        "aspectRatio": "1.00"
+      },
+      {
+        "id": "4-7",
+        "title": "Orgulho Em Trancas",
+        "serie": "Negras",
+        "imageUrl": "negras/orgulho-em-trancas.jpg",
+        "thumbnailUrl": "negras/orgulho-em-trancas.jpg?tr=w-800,h-800",
+        "aspectRatio": "0.73"
+      },
+      {
+        "id": "4-8",
+        "title": "Presença",
+        "serie": "Negras",
+        "imageUrl": "negras/presenca.jpg",
+        "thumbnailUrl": "negras/presenca.jpg?tr=w-800,h-800",
+        "aspectRatio": "0.74"
+      },
+      {
+        "id": "4-9",
+        "title": "Raiz Silenciosa",
+        "serie": "Negras",
+        "imageUrl": "negras/raiz-silenciosa.jpeg",
+        "thumbnailUrl": "negras/raiz-silenciosa.jpeg?tr=w-800,h-800",
+        "aspectRatio": "0.75"
+      },
+      {
+        "id": "4-10",
+        "title": "Retorno",
+        "serie": "Negras",
+        "imageUrl": "negras/retorno.jpg",
+        "thumbnailUrl": "negras/retorno.jpg?tr=w-800,h-800",
+        "aspectRatio": "0.74"
+      },
+      {
+        "id": "4-11",
+        "title": "Silencio Verde",
+        "serie": "Negras",
+        "imageUrl": "negras/silencio-verde.jpeg",
+        "thumbnailUrl": "negras/silencio-verde.jpeg?tr=w-800,h-800",
+        "aspectRatio": "0.75"
+      },
+      {
+        "id": "4-12",
+        "title": "Sossego Dourado",
+        "serie": "Negras",
+        "imageUrl": "negras/sossego-dourado.jpeg",
+        "thumbnailUrl": "negras/sossego-dourado.jpeg?tr=w-800,h-800",
+        "aspectRatio": "1.33"
+      }
+    ]
   }
 ]

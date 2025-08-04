@@ -59,7 +59,7 @@ export const SerieDetail: React.FC = () => {
             {getSerieDescription(serie.id, t)}
           </S.SerieDescription>
           <S.ArtworkCount>
-            {t("series.artworksCount") + { count: serie.artworks.length }}
+            {t("series.artworksCount") + " " + serie?.artworks.length}
           </S.ArtworkCount>
         </S.SerieInfo>
       </S.Header>

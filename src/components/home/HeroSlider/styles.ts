@@ -120,7 +120,7 @@ export const Indicator = styled.button<{
   height: 8px;
   border-radius: 4px;
   background-color: ${({ active }) =>
-    active ? "rgba(255, 255, 255, 0.3)" : "rgba(255, 255, 255, 1)"};
+    active ? "rgba(255, 255, 255, 0.3)" : "rgba(255, 255, 255, 0.7)"};
   transition: all ${({ theme }) => theme.transitions.default};
   overflow: hidden;
   cursor: pointer;
@@ -135,7 +135,7 @@ export const Indicator = styled.button<{
         left: 0;
         height: 100%;
         width: 0%;
-        background-color: #fff;
+        background-color: rgba(255, 255, 255, 0.7);
         border-radius: 4px;
         animation: ${loadingAnimation} 5s linear;
       }
@@ -143,7 +143,7 @@ export const Indicator = styled.button<{
 
   &:hover {
     background-color: ${({ active }) =>
-      active ? "rgba(255, 255, 255, 0.5)" : "rgba(255, 255, 255, 0.8)"};
+      active ? "rgba(255, 255, 255, 0.5)" : "rgba(255, 255, 255, 0.7)"};
     transform: scale(1.1);
   }
 

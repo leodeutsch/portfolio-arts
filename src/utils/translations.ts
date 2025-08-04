@@ -71,6 +71,8 @@ Minha arte se ancora na cultura baiana, mas não se limita a ela: ela é memóri
         "Uma série que explora a beleza das formas e relevos naturais.",
       sloops: "Uma série que captura a essência dos saveiros na Bahia.",
       abstracts: "Uma série que explora a interação entre cores e formas.",
+      blackWomen:
+        "Uma série que celebra a beleza e a força das mulheres negras.",
     },
   },
   en: {
@@ -144,6 +146,8 @@ My art is anchored in Bahian culture, but not limited to it: it is memory, ident
       sloops: "A series that captures the essence of the saveiros in Bahia.",
       abstracts:
         "A series that explores the interaction between colors and forms.",
+      blackWomen:
+        "A series that celebrates the beauty and strength of black women.",
     },
   },
 };
