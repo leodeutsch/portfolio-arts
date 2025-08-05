@@ -77,18 +77,28 @@ export const About: React.FC = () => {
           <S.SectionTitle>{t("about.portfolio")}</S.SectionTitle>
           <S.PortfolioGrid>
             <S.PortfolioButton
-              href="https://drive.google.com/file/d/1CnGCyfQxd-f5OV83IPhNWtYOoAcCD-ur/preview"
+              href="https://drive.google.com/file/d/1xatOXgFIxuaDbna10C9vMLHfZKLEE3Wd/preview"
               target="_blank"
               rel="noopener noreferrer"
+              $backgroundImage={`https://ik.imagekit.io/${
+                import.meta.env.VITE_IMGKIT_KEY
+              }/saveiros/velas-ao-vento.jpg?tr=w-600,h-400,c-fill`}
             >
-              {t("about.viewSloopsPortfolio")}
+              <S.PortfolioButtonContent>
+                {t("about.viewSloopsPortfolio")}
+              </S.PortfolioButtonContent>
             </S.PortfolioButton>
             <S.PortfolioButton
-              href="https://drive.google.com/file/d/1Q_xszEe6gwUxPGALqAbQl2vG2fayp-XU/preview"
+              href="https://drive.google.com/file/d/190M0KqTZtT_CcgUwWeJ6cGRs2cchb1qB/preview"
               target="_blank"
               rel="noopener noreferrer"
+              $backgroundImage={`https://ik.imagekit.io/${
+                import.meta.env.VITE_IMGKIT_KEY
+              }/negras/cabeca-feita-I.jpg?tr=w-600,h-400,c-fill`}
             >
-              {t("about.viewBlackWomenPortfolio")}
+              <S.PortfolioButtonContent>
+                {t("about.viewBlackWomenPortfolio")}
+              </S.PortfolioButtonContent>
             </S.PortfolioButton>
           </S.PortfolioGrid>
         </S.Section>

@@ -119,7 +119,7 @@ export const ContactTitle = styled(Link)`
 
 export const PortfolioGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   margin-top: 1.5rem;
 
@@ -129,27 +129,106 @@ export const PortfolioGrid = styled.div`
   }
 `;
 
-export const PortfolioButton = styled.a`
-  display: inline-block;
-  padding: 1rem 2rem;
-  background-color: ${({ theme }) => theme.colors.primary};
-  color: white;
-  font-weight: 600;
-  font-size: 1.1rem;
-  border-radius: 50px;
+export const PortfolioButton = styled.a<{ $backgroundImage: string }>`
+  position: relative;
+  display: block;
+  height: 150px;
+  border-radius: 16px;
+  overflow: hidden;
   transition: all ${({ theme }) => theme.transitions.default};
-  box-shadow: ${({ theme }) => theme.shadows.small};
-  text-align: center;
+  box-shadow: ${({ theme }) => theme.shadows.medium};
   text-decoration: none;
+  background-image: url(${({ $backgroundImage }) => $backgroundImage});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 50%,
+      rgba(0, 0, 0, 0.4) 80%,
+      rgba(0, 0, 0, 0.5) 90%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+    backdrop-filter: blur(0px);
+    transition: backdrop-filter ${({ theme }) => theme.transitions.default};
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 45%;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 10%,
+      transparent 20%,
+      transparent 30%,
+      transparent 40%,
+      transparent 50%,
+      transparent 60%,
+      transparent 70%,
+      transparent 80%,
+      transparent 90%,
+      transparent 100%
+    );
+    backdrop-filter: blur(1px);
+  }
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.primary}CC;
-    transform: translateY(-2px);
+    transform: translateY(-4px);
     box-shadow: ${({ theme }) => theme.shadows.large};
+
+    &::before {
+      backdrop-filter: blur(1px);
+    }
+
+    &::after {
+      backdrop-filter: blur(1px);
+    }
   }
 
   ${media.tablet} {
-    padding: 0.8rem 1.5rem;
+    height: 200px;
+  }
+
+  ${media.mobile} {
+    height: 180px;
+  }
+`;
+
+export const PortfolioButtonContent = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 1.5rem;
+  color: white;
+  font-family: ${({ theme }) => theme.fonts.primary};
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: center;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
+  ${media.tablet} {
+    padding: 1.5rem 1rem;
     font-size: 1rem;
+  }
+
+  ${media.mobile} {
+    padding: 1rem 0.8rem;
+    font-size: 0.9rem;
   }
 `;
