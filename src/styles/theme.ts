@@ -13,7 +13,8 @@ export const theme: DefaultTheme = {
   fonts: {
     primary:
       "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-    heading: "'Playfair Display', serif",
+    heading:
+      "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
   },
   sizes: {
     maxWidth: "1200px",
