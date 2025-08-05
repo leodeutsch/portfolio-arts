@@ -32,7 +32,7 @@ export const ContactContent = styled.div`
 
 export const Title = styled.h1`
   font-size: 3rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   color: ${({ theme }) => theme.colors.secondary};
   text-align: center;
 
@@ -44,10 +44,9 @@ export const Title = styled.h1`
 
 export const FormSection = styled.section`
   background: white;
-  padding: 3rem;
+  padding: 1rem;
   border-radius: 8px;
-  box-shadow: ${({ theme }) => theme.shadows.medium};
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 
   ${media.tablet} {
     padding: 2rem 1.5rem;
@@ -168,79 +167,118 @@ export const ErrorMessage = styled.p`
 export const ContactInfo = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
+  padding-inline: 20%;
 `;
 
 export const InfoTitle = styled.h2`
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   color: ${({ theme }) => theme.colors.secondary};
+  text-align: center;
+`;
+
+export const ContactGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+
+  ${media.tablet} {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  ${media.mobile} {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 `;
 
 export const ContactItem = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 1rem;
-  padding: 1rem;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: ${({ theme }) => theme.shadows.small};
+  padding: 0.5rem 0.2rem;
   cursor: pointer;
-  transition: all ${({ theme }) => theme.transitions.default};
   position: relative;
+  text-align: center;
+  transition: all ${({ theme }) => theme.transitions.default};
 
   &:hover {
-    transform: translateX(4px);
-    box-shadow: ${({ theme }) => theme.shadows.medium};
+    transform: translateY(-4px);
+  }
+
+  ${media.mobile} {
+    padding: 1.5rem 1rem;
   }
 `;
 
 export const IconWrapper = styled.div`
-  width: 40px;
-  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f3f4f6;
-  border-radius: 8px;
-`;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
 
-export const EmailIcon = styled.span`
-  font-size: 1.5rem;
-`;
-
-export const WhatsAppIcon = styled.span`
-  font-size: 1.5rem;
-`;
-
-export const InstagramIcon = styled.span`
-  font-size: 1.5rem;
+  ${media.mobile} {
+    width: 50px;
+    height: 50px;
+  }
 `;
 
 export const ContactDetails = styled.div`
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 `;
 
 export const ContactLabel = styled.p`
-  font-weight: 600;
-  color: ${({ theme }) => theme.colors.secondary};
-  margin-bottom: 0.25rem;
+  font-weight: 400;
+  color: ${({ theme }) => theme.colors.primary};
+  margin-bottom: 0;
+  font-size: 0.9rem;
+
+  ${media.mobile} {
+    font-size: 0.9rem;
+  }
 `;
 
 export const ContactValue = styled.p`
   color: ${({ theme }) => theme.colors.primary};
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  margin: 0;
+  word-break: break-all;
+
+  ${media.mobile} {
+    font-size: 0.8rem;
+  }
 `;
 
 export const Tooltip = styled.span`
   position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
+  top: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: ${({ theme }) => theme.colors.secondary};
   color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
   font-size: 0.875rem;
   animation: ${fadeIn} 0.2s ease;
+  white-space: nowrap;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid ${({ theme }) => theme.colors.secondary};
+  }
 `;

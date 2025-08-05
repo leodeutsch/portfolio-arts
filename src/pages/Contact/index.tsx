@@ -1,12 +1,11 @@
 import emailjs from "@emailjs/browser";
 import React, { useState } from "react";
+import { FaInstagram, FaRegEnvelope, FaWhatsapp } from "react-icons/fa";
 import { Copyright } from "../../components/copyright";
 import { contactConfig } from "../../config/contact";
 import { emailConfig } from "../../config/emailjs";
 import { useLanguage } from "../../hooks/useLanguage";
-import EmailIcon from "../../images/envelope.png";
-import InstagramIcon from "../../images/instagram.png";
-import WhatsAppIcon from "../../images/whatsapp.png";
+import { theme } from "../../styles/theme";
 import * as S from "./styles";
 
 export const Contact: React.FC = () => {
@@ -161,68 +160,56 @@ export const Contact: React.FC = () => {
         </S.FormSection>
 
         <S.ContactInfo>
-          <S.InfoTitle>{t("contact.contactInformation")}</S.InfoTitle>
+          {/* <S.InfoTitle>{t("contact.contactInformation")}</S.InfoTitle> */}
 
-          <S.ContactItem onClick={handleEmailClick}>
-            <S.IconWrapper>
-              <img
-                alt="Email"
-                src={EmailIcon}
-                style={{ width: "24px", height: "24px" }}
-              />
-            </S.IconWrapper>
-            <S.ContactDetails>
-              <S.ContactLabel>Email</S.ContactLabel>
-              <S.ContactValue>{contactConfig.email}</S.ContactValue>
+          <S.ContactGrid>
+            <S.ContactItem onClick={handleEmailClick}>
+              <S.IconWrapper>
+                <FaRegEnvelope size={24} color={theme.colors.primary} />
+              </S.IconWrapper>
+              <S.ContactDetails>
+                <S.ContactLabel>Email</S.ContactLabel>
+                {/* <S.ContactValue>{contactConfig.email}</S.ContactValue> */}
+              </S.ContactDetails>
               {showCopiedTooltip && (
                 <S.Tooltip>{t("contact.copied")}</S.Tooltip>
               )}
-            </S.ContactDetails>
-          </S.ContactItem>
+            </S.ContactItem>
 
-          <S.ContactItem onClick={handleWhatsAppClickMain}>
-            <S.IconWrapper>
-              <img
-                alt="WhatsApp - Artista"
-                src={WhatsAppIcon}
-                style={{ width: "24px", height: "24px" }}
-              />
-            </S.IconWrapper>
-            <S.ContactDetails>
-              <S.ContactLabel>WhatsApp</S.ContactLabel>
-              <S.ContactValue>{t("contact.sendMessage")}</S.ContactValue>
-            </S.ContactDetails>
-          </S.ContactItem>
+            <S.ContactItem onClick={handleWhatsAppClickMain}>
+              <S.IconWrapper>
+                <FaWhatsapp size={24} color={theme.colors.primary} />
+              </S.IconWrapper>
+              <S.ContactDetails>
+                <S.ContactLabel>{t("contact.sendMessage")}</S.ContactLabel>
+                {/* <S.ContactValue>{t("contact.sendMessage")}</S.ContactValue> */}
+              </S.ContactDetails>
+            </S.ContactItem>
 
-          <S.ContactItem onClick={handleWhatsAppClickSecondary}>
-            <S.IconWrapper>
-              <img
-                alt="WhatsApp - Assessoria"
-                src={WhatsAppIcon}
-                style={{ width: "24px", height: "24px" }}
-              />
-            </S.IconWrapper>
-            <S.ContactDetails>
-              <S.ContactLabel>WhatsApp</S.ContactLabel>
-              <S.ContactValue>
-                {t("contact.sendMessageSecondary")}
-              </S.ContactValue>
-            </S.ContactDetails>
-          </S.ContactItem>
+            <S.ContactItem onClick={handleWhatsAppClickSecondary}>
+              <S.IconWrapper>
+                <FaWhatsapp size={24} color={theme.colors.primary} />
+              </S.IconWrapper>
+              <S.ContactDetails>
+                <S.ContactLabel>
+                  {t("contact.sendMessageSecondary")}
+                </S.ContactLabel>
+                {/* <S.ContactValue>
+                  {t("contact.sendMessageSecondary")}
+                </S.ContactValue> */}
+              </S.ContactDetails>
+            </S.ContactItem>
 
-          <S.ContactItem onClick={handleInstagramClick}>
-            <S.IconWrapper>
-              <img
-                alt="Instagram"
-                src={InstagramIcon}
-                style={{ width: "24px", height: "24px" }}
-              />
-            </S.IconWrapper>
-            <S.ContactDetails>
-              <S.ContactLabel>Instagram</S.ContactLabel>
-              <S.ContactValue>@{contactConfig.instagram}</S.ContactValue>
-            </S.ContactDetails>
-          </S.ContactItem>
+            <S.ContactItem onClick={handleInstagramClick}>
+              <S.IconWrapper>
+                <FaInstagram size={24} color={theme.colors.primary} />
+              </S.IconWrapper>
+              <S.ContactDetails>
+                <S.ContactLabel>@{contactConfig.instagram}</S.ContactLabel>
+                {/* <S.ContactValue>@{contactConfig.instagram}</S.ContactValue> */}
+              </S.ContactDetails>
+            </S.ContactItem>
+          </S.ContactGrid>
         </S.ContactInfo>
 
         <Copyright />
