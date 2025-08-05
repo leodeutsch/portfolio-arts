@@ -29,14 +29,26 @@ export const ArtworkModal: React.FC<ArtworkModalProps> = ({
   );
 
   const artwork = artworks[currentIndex];
+  const isFirstArtwork = currentIndex === 0;
+  const isLastArtwork = currentIndex === artworks.length - 1;
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         onClose();
-      } else if (showNavigation && e.key === "ArrowRight" && onNext) {
+      } else if (
+        showNavigation &&
+        e.key === "ArrowRight" &&
+        !isLastArtwork &&
+        onNext
+      ) {
         onNext();
-      } else if (showNavigation && e.key === "ArrowLeft" && onPrevious) {
+      } else if (
+        showNavigation &&
+        e.key === "ArrowLeft" &&
+        !isFirstArtwork &&
+        onPrevious
+      ) {
         onPrevious();
       }
     },
@@ -80,12 +92,12 @@ export const ArtworkModal: React.FC<ArtworkModalProps> = ({
             <S.CloseButton onClick={onClose}>
               <CircleX size={32} color="white" aria-label={t("common.close")} />
             </S.CloseButton>
-            {showNavigation && onPrevious && (
+            {showNavigation && !isFirstArtwork && onPrevious && (
               <S.PrevButton onClick={onPrevious}>
                 <ChevronLeft size={48} color="rgba(255, 255, 255, 0.8)" />
               </S.PrevButton>
             )}
-            {showNavigation && onNext && (
+            {showNavigation && !isLastArtwork && onNext && (
               <S.NextButton onClick={onNext}>
                 <ChevronRight size={48} color="rgba(255, 255, 255, 0.8)" />
               </S.NextButton>
