@@ -131,36 +131,41 @@ export const Header: React.FC = () => {
           <S.LogoText $transparent={isTransparent}>Rosa Rocha</S.LogoText>
         </S.Logo>
 
-        <S.MenuButton
-          ref={menuButtonRef}
-          aria-label="Toggle menu"
-          onClick={() => setIsMenuOpen((prev) => !prev)}
-          isOpen={isMenuOpen}
-          $transparent={isTransparent}
-        >
-          {!isMenuOpen ? <Menu size={32} /> : <X size={32} />}
-        </S.MenuButton>
+        <S.RightSection>
+          <S.Nav ref={navRef} isOpen={isMenuOpen} $transparent={isTransparent}>
+            <S.NavList>
+              {navItems.map((item) => (
+                <S.NavItem key={item.path}>
+                  <S.NavLink
+                    to={item.path}
+                    active={isPathActive(item.path)}
+                    onClick={() => setIsMenuOpen(false)}
+                    $transparent={isTransparent}
+                  >
+                    {item.label}
+                  </S.NavLink>
+                </S.NavItem>
+              ))}
+            </S.NavList>
+          </S.Nav>
 
-        <S.Nav ref={navRef} isOpen={isMenuOpen} $transparent={isTransparent}>
-          <S.NavList>
-            {navItems.map((item) => (
-              <S.NavItem key={item.path}>
-                <S.NavLink
-                  to={item.path}
-                  active={isPathActive(item.path)}
-                  onClick={() => setIsMenuOpen(false)}
-                  $transparent={isTransparent}
-                >
-                  {item.label}
-                </S.NavLink>
-              </S.NavItem>
-            ))}
-          </S.NavList>
-        </S.Nav>
+          <S.LanguageButton
+            onClick={toggleLanguage}
+            $transparent={isTransparent}
+          >
+            {language === "pt" ? "EN" : "PT"}
+          </S.LanguageButton>
 
-        <S.LanguageButton onClick={toggleLanguage} $transparent={isTransparent}>
-          {language === "pt" ? "EN" : "PT"}
-        </S.LanguageButton>
+          <S.MenuButton
+            ref={menuButtonRef}
+            aria-label="Toggle menu"
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            isOpen={isMenuOpen}
+            $transparent={isTransparent}
+          >
+            {!isMenuOpen ? <Menu size={32} /> : <X size={32} />}
+          </S.MenuButton>
+        </S.RightSection>
       </S.HeaderContainer>
     </S.HeaderWrapper>
   );

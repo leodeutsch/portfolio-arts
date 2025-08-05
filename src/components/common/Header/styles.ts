@@ -36,6 +36,7 @@ export const Logo = styled(Link)`
   display: flex;
   align-items: center;
   z-index: 1001;
+  margin-right: auto; /* Empurra o logo para a esquerda */
 `;
 
 export const LogoText = styled.h1<{ $transparent?: boolean }>`
@@ -46,6 +47,17 @@ export const LogoText = styled.h1<{ $transparent?: boolean }>`
   text-shadow: ${({ $transparent }) =>
     $transparent ? "0 2px 4px rgba(0, 0, 0, 0.3)" : "none"};
   transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+`;
+
+export const RightSection = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-left: auto; /* Empurra tudo para a direita */
+
+  ${media.tablet} {
+    gap: 1rem;
+  }
 `;
 
 export const Nav = styled.nav<{

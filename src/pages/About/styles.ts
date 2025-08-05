@@ -116,3 +116,40 @@ export const ContactTitle = styled(Link)`
     border-color: ${({ theme }) => theme.colors.primary};
   }
 `;
+
+export const PortfolioGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+
+  ${media.tablet} {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+`;
+
+export const PortfolioButton = styled.a`
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  transition: all ${({ theme }) => theme.transitions.default};
+  box-shadow: ${({ theme }) => theme.shadows.small};
+  text-align: center;
+  text-decoration: none;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.primary}CC;
+    transform: translateY(-2px);
+    box-shadow: ${({ theme }) => theme.shadows.large};
+  }
+
+  ${media.tablet} {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+`;

@@ -37,6 +37,9 @@ export interface Translation {
     getInTouch: string;
     email: string;
     allRightsReserved: string;
+    portfolio: string;
+    viewSloopsPortfolio: string;
+    viewBlackWomenPortfolio: string;
   };
   contact: {
     title: string;

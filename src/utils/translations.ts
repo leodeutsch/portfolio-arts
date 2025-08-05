@@ -46,6 +46,9 @@ Minha arte se ancora na cultura baiana, mas não se limita a ela: ela é memóri
       getInTouch: "Entre em Contato",
       email: "E-mail",
       allRightsReserved: "Todos os direitos reservados.",
+      portfolio: "Portfólio",
+      viewSloopsPortfolio: "Ver Portfólio de Saveiros",
+      viewBlackWomenPortfolio: "Ver Portfólio de Mulheres Negras",
     },
     contact: {
       title: "Contato",
@@ -118,6 +121,9 @@ My art is anchored in Bahian culture, but not limited to it: it is memory, ident
       getInTouch: "Get in Touch",
       email: "Email",
       allRightsReserved: "All rights reserved.",
+      portfolio: "Portfolio",
+      viewSloopsPortfolio: "View Sloops Portfolio",
+      viewBlackWomenPortfolio: "View Black Women Portfolio",
     },
     contact: {
       title: "Contact",
