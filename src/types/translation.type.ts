@@ -57,6 +57,7 @@ export interface Translation {
     contactInformation: string;
     copied: string;
     sendMessage: string;
+    sendMessageSecondary: string;
   };
   seriesDetails?: {
     formRelief?: string;

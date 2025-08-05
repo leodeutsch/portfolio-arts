@@ -69,12 +69,22 @@ export const Contact: React.FC = () => {
     });
   };
 
-  const handleWhatsAppClick = () => {
+  const handleWhatsAppClickMain = () => {
     const message = encodeURIComponent(
       "Olá! Vi seu portfólio e gostaria de conversar sobre suas obras."
     );
     window.open(
       `https://wa.me/${contactConfig.whatsapp}?text=${message}`,
+      "_blank"
+    );
+  };
+
+  const handleWhatsAppClickSecondary = () => {
+    const message = encodeURIComponent(
+      "Olá! Vi seu portfólio e gostaria de conversar sobre suas obras."
+    );
+    window.open(
+      `https://wa.me/${contactConfig.whatsappSecondary}?text=${message}`,
       "_blank"
     );
   };
@@ -170,10 +180,10 @@ export const Contact: React.FC = () => {
             </S.ContactDetails>
           </S.ContactItem>
 
-          <S.ContactItem onClick={handleWhatsAppClick}>
+          <S.ContactItem onClick={handleWhatsAppClickMain}>
             <S.IconWrapper>
               <img
-                alt="WhatsApp"
+                alt="WhatsApp - Artista"
                 src={WhatsAppIcon}
                 style={{ width: "24px", height: "24px" }}
               />
@@ -181,6 +191,22 @@ export const Contact: React.FC = () => {
             <S.ContactDetails>
               <S.ContactLabel>WhatsApp</S.ContactLabel>
               <S.ContactValue>{t("contact.sendMessage")}</S.ContactValue>
+            </S.ContactDetails>
+          </S.ContactItem>
+
+          <S.ContactItem onClick={handleWhatsAppClickSecondary}>
+            <S.IconWrapper>
+              <img
+                alt="WhatsApp - Assessoria"
+                src={WhatsAppIcon}
+                style={{ width: "24px", height: "24px" }}
+              />
+            </S.IconWrapper>
+            <S.ContactDetails>
+              <S.ContactLabel>WhatsApp</S.ContactLabel>
+              <S.ContactValue>
+                {t("contact.sendMessageSecondary")}
+              </S.ContactValue>
             </S.ContactDetails>
           </S.ContactItem>
 

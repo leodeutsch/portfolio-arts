@@ -65,7 +65,8 @@ Minha arte se ancora na cultura baiana, mas não se limita a ela: ela é memóri
       error: "Erro ao enviar mensagem. Tente novamente.",
       contactInformation: "Informações de Contato",
       copied: "Copiado!",
-      sendMessage: "Enviar Mensagem",
+      sendMessage: "Enviar Mensagem para a Artista",
+      sendMessageSecondary: "Enviar Mensagem para a Assessoria",
     },
     seriesDetails: {
       formRelief:
@@ -140,7 +141,8 @@ My art is anchored in Bahian culture, but not limited to it: it is memory, ident
       error: "Error sending message. Please try again.",
       contactInformation: "Contact Information",
       copied: "Copied!",
-      sendMessage: "Send Message",
+      sendMessage: "Send Message to the Artist",
+      sendMessageSecondary: "Send Message to the Advisor",
     },
     seriesDetails: {
       formRelief:
