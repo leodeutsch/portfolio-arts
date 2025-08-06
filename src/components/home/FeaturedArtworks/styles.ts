@@ -36,78 +36,94 @@ export const ArtworksGrid = styled.div`
   }
 `;
 
-export const ArtworkCard = styled.div`
-  display: block;
-  background: white;
+export const ArtworkCard = styled.div<{ $backgroundImage: string }>`
+  position: relative;
+  aspect-ratio: 1;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: ${({ theme }) => theme.shadows.small};
   transition: all ${({ theme }) => theme.transitions.default};
   cursor: pointer;
 
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: ${({ theme }) => theme.shadows.medium};
-  }
-`;
-
-export const ArtworkImage = styled.div`
-  position: relative;
-  aspect-ratio: 1;
-  overflow: hidden;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(${({ $backgroundImage }) => $backgroundImage});
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     transition: transform ${({ theme }) => theme.transitions.slow};
   }
 
-  &:hover img {
-    transform: scale(1.05);
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20%;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.05) 5%,
+      rgba(0, 0, 0, 0.2) 20%,
+      rgba(0, 0, 0, 0.5) 60%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+    backdrop-filter: blur(0.5px);
   }
-`;
-
-export const ArtworkOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: ${({ theme }) => theme.colors.overlay};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity ${({ theme }) => theme.transitions.default};
-
-  ${ArtworkCard}:hover & {
-    opacity: 1;
-  }
-`;
-
-export const ViewButton = styled.span`
-  color: white;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 0.75rem 1.5rem;
-  border: 2px solid white;
-  transition: all ${({ theme }) => theme.transitions.default};
 
   &:hover {
-    background-color: white;
-    color: ${({ theme }) => theme.colors.secondary};
+    box-shadow: ${({ theme }) => theme.shadows.large};
+
+    &::before {
+      transform: scale(1.1);
+    }
+
+    &::after {
+      backdrop-filter: blur(0.5px);
+    }
   }
 `;
 
 export const ArtworkInfo = styled.div`
-  padding: 1.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 1.5rem 1rem;
+  color: white;
+  z-index: 3;
+  text-align: left;
+
+  ${media.tablet} {
+    padding: 1.5rem 1rem 0.8rem;
+  }
+
+  ${media.mobile} {
+    padding: 1rem 0.8rem 0.6rem;
+  }
 `;
 
 export const ArtworkTitle = styled.h3`
+  font-family: ${({ theme }) => theme.fonts.primary};
   font-size: 1.1rem;
-  color: ${({ theme }) => theme.colors.secondary};
+  font-weight: 600;
+  margin: 0;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+
+  ${media.tablet} {
+    font-size: 1rem;
+  }
+
+  ${media.mobile} {
+    font-size: 0.9rem;
+  }
 `;
 
 export const ViewAllButton = styled(Link)`
@@ -119,7 +135,7 @@ export const ViewAllButton = styled(Link)`
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border-radius: 4px;
+  border-radius: 8px;
   transition: all ${({ theme }) => theme.transitions.default};
   text-align: center;
   width: 100%;
@@ -128,6 +144,7 @@ export const ViewAllButton = styled(Link)`
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.primary};
-    transform: translateY(-2px);
+    box-shadow: ${({ theme }) => theme.shadows.large};
+    transform: translateY(-1px);
   }
 `;

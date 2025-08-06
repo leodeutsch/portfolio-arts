@@ -36,17 +36,8 @@ export const FeaturedArtworks: React.FC<FeaturedArtworksProps> = ({
             <S.ArtworkCard
               key={artwork.id}
               onClick={() => handleArtworkClick(index)}
+              $backgroundImage={getImageKitUrl(artwork.thumbnailUrl)}
             >
-              <S.ArtworkImage>
-                <img
-                  src={getImageKitUrl(artwork.thumbnailUrl)}
-                  alt={artwork.title}
-                  loading="lazy"
-                />
-                <S.ArtworkOverlay>
-                  <S.ViewButton>{t("common.view")}</S.ViewButton>
-                </S.ArtworkOverlay>
-              </S.ArtworkImage>
               <S.ArtworkInfo>
                 <S.ArtworkTitle>{artwork.title}</S.ArtworkTitle>
               </S.ArtworkInfo>

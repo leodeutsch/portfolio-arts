@@ -22,7 +22,7 @@ export const ArtworkItem = styled.div`
   position: relative;
   aspect-ratio: 1;
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 8px;
   background-color: #f5f5f5;
 `;
 

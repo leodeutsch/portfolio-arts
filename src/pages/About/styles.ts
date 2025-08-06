@@ -107,7 +107,7 @@ export const ContactTitle = styled(Link)`
   color: ${({ theme }) => theme.colors.secondary};
   border-width: 1px;
   border-style: solid;
-  border-radius: 4px;
+  border-radius: 8px;
   border-color: ${({ theme }) => theme.colors.secondary};
   padding: 0.8rem 1.2rem;
 
