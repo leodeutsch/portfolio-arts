@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Copyright } from "../../components/copyright";
 import { useLanguage } from "../../hooks/useLanguage";
 import ProfilePhoto from "../../images/profile.jpg";
@@ -6,6 +6,31 @@ import * as S from "./styles";
 
 export const About: React.FC = () => {
   const { t } = useLanguage();
+  const contactButtonRef = useRef<HTMLAnchorElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const button = contactButtonRef.current;
+    if (!button) return;
+
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    button.style.setProperty("--mouse-x", `${x}px`);
+    button.style.setProperty("--mouse-y", `${y}px`);
+  };
+
+  const handleMouseLeave = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const button = contactButtonRef.current;
+    if (!button) return;
+
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    button.style.setProperty("--mouse-x", `${x}px`);
+    button.style.setProperty("--mouse-y", `${y}px`);
+  };
 
   return (
     <S.AboutContainer>
@@ -105,7 +130,14 @@ export const About: React.FC = () => {
       </S.ContentSection>
 
       <S.ContactSection>
-        <S.ContactTitle to="/contact">{t("about.getInTouch")}</S.ContactTitle>
+        <S.ContactTitle
+          ref={contactButtonRef}
+          to="/contact"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        >
+          {t("about.getInTouch")}
+        </S.ContactTitle>
       </S.ContactSection>
 
       <Copyright />

@@ -103,17 +103,76 @@ export const ContactSection = styled.section`
 `;
 
 export const ContactTitle = styled(Link)`
+  position: relative;
+  display: inline-block;
   font-size: 1.5rem;
   color: ${({ theme }) => theme.colors.secondary};
-  border-width: 1px;
-  border-style: solid;
+  border: 1px solid ${({ theme }) => theme.colors.secondary};
   border-radius: 8px;
-  border-color: ${({ theme }) => theme.colors.secondary};
   padding: 0.8rem 1.2rem;
+  text-decoration: none;
+  overflow: hidden;
+  background: transparent;
+  transition: color 0.4s ease;
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: var(--mouse-y, 50%);
+    left: var(--mouse-x, 50%);
+    width: 0;
+    height: 0;
+    background: radial-gradient(
+      circle,
+      ${({ theme }) => theme.colors.primary} 0%,
+      ${({ theme }) => theme.colors.primary}90 70%,
+      transparent 100%
+    );
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+      height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: var(--mouse-y, 50%);
+    left: var(--mouse-x, 50%);
+    width: 0;
+    height: 0;
+    background: ${({ theme }) => theme.colors.primary};
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s,
+      height 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+    z-index: -1;
+  }
 
   &:hover {
-    color: ${({ theme }) => theme.colors.primary};
+    color: white;
     border-color: ${({ theme }) => theme.colors.primary};
+
+    &::before {
+      width: 600px;
+      height: 600px;
+    }
+
+    &::after {
+      width: 550px;
+      height: 550px;
+    }
+  }
+
+  &:not(:hover) {
+    &::before,
+    &::after {
+      transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+        height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
   }
 `;
 
